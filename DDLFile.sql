@@ -1,71 +1,8 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2005                    */
-/* Created on:     5/12/2025 4:12:05 AM                         */
+/* Created on:     5/15/2025 12:11:31 AM                        */
 /*==============================================================*/
 
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('COURSE') and o.name = 'FK_COURSE_REQUIRE_EXAM')
-alter table COURSE
-   drop constraint FK_COURSE_REQUIRE_EXAM
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('ENROLL_IN') and o.name = 'FK_ENROLL_I_ENROLL_IN_STUDENT')
-alter table ENROLL_IN
-   drop constraint FK_ENROLL_I_ENROLL_IN_STUDENT
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('ENROLL_IN') and o.name = 'FK_ENROLL_I_ENROLL_IN_COURSE')
-alter table ENROLL_IN
-   drop constraint FK_ENROLL_I_ENROLL_IN_COURSE
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('EXAM') and o.name = 'FK_EXAM_REQUIRE2_COURSE')
-alter table EXAM
-   drop constraint FK_EXAM_REQUIRE2_COURSE
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('EXAMRESULT') and o.name = 'FK_EXAMRESU_HAS_STUDENT')
-alter table EXAMRESULT
-   drop constraint FK_EXAMRESU_HAS_STUDENT
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('EXAMRESULT') and o.name = 'FK_EXAMRESU_RECORD_EXAM')
-alter table EXAMRESULT
-   drop constraint FK_EXAMRESU_RECORD_EXAM
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('LEARNINGOBJECT') and o.name = 'FK_LEARNING_INCLUDE_COURSE')
-alter table LEARNINGOBJECT
-   drop constraint FK_LEARNING_INCLUDE_COURSE
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('TEACHES') and o.name = 'FK_TEACHES_TEACHES_COURSE')
-alter table TEACHES
-   drop constraint FK_TEACHES_TEACHES_COURSE
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('TEACHES') and o.name = 'FK_TEACHES_TEACHES2_INSTRUCT')
-alter table TEACHES
-   drop constraint FK_TEACHES_TEACHES2_INSTRUCT
-go
 
 if exists (select 1
             from  sysindexes
@@ -118,35 +55,19 @@ if exists (select 1
 go
 
 if exists (select 1
+            from  sysindexes
+           where  id    = object_id('EXAM')
+            and   name  = 'EXAMRESULT_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index EXAM.EXAMRESULT_FK
+go
+
+if exists (select 1
             from  sysobjects
            where  id = object_id('EXAM')
             and   type = 'U')
    drop table EXAM
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('EXAMRESULT')
-            and   name  = 'RECORD_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index EXAMRESULT.RECORD_FK
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('EXAMRESULT')
-            and   name  = 'HAS_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index EXAMRESULT.HAS_FK
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('EXAMRESULT')
-            and   type = 'U')
-   drop table EXAMRESULT
 go
 
 if exists (select 1
@@ -229,10 +150,11 @@ go
 /* Table: ENROLL_IN                                             */
 /*==============================================================*/
 create table ENROLL_IN (
-   SID                  char(10)             not null,
+   SID                  int                  not null,
    CID                  int                  not null,
    SEMESTER             varchar(20)          not null,
    YEAR                 int                  not null,
+   GRADE                float                null,
    constraint PK_ENROLL_IN primary key (SID, CID)
 )
 go
@@ -258,10 +180,20 @@ go
 /*==============================================================*/
 create table EXAM (
    EXAMNAME             varchar(30)          not null,
+   SID                  int                  null,
    CID                  int                  not null,
    DATE                 varchar(30)          not null,
    TYPE                 varchar(20)          not null,
+   GRADE                float                null,
    constraint PK_EXAM primary key nonclustered (EXAMNAME)
+)
+go
+
+/*==============================================================*/
+/* Index: EXAMRESULT_FK                                         */
+/*==============================================================*/
+create index EXAMRESULT_FK on EXAM (
+SID ASC
 )
 go
 
@@ -274,40 +206,13 @@ CID ASC
 go
 
 /*==============================================================*/
-/* Table: EXAMRESULT                                            */
-/*==============================================================*/
-create table EXAMRESULT (
-   GRADE                float                not null,
-   SID                  char(10)             not null,
-   EXAMNAME             varchar(30)          not null,
-   constraint PK_EXAMRESULT primary key nonclustered (GRADE)
-)
-go
-
-/*==============================================================*/
-/* Index: HAS_FK                                                */
-/*==============================================================*/
-create index HAS_FK on EXAMRESULT (
-SID ASC
-)
-go
-
-/*==============================================================*/
-/* Index: RECORD_FK                                             */
-/*==============================================================*/
-create index RECORD_FK on EXAMRESULT (
-EXAMNAME ASC
-)
-go
-
-/*==============================================================*/
 /* Table: INSTRUCTOR                                            */
 /*==============================================================*/
 create table INSTRUCTOR (
    IID                  int                  not null,
    INAME                varchar(30)          not null,
    IEMAIL               varchar(30)          not null,
-   IPASSWORD            varchar(20)          not null,
+   IPASSWORD            varchar(64)          not null,
    constraint PK_INSTRUCTOR primary key nonclustered (IID)
 )
 go
@@ -336,10 +241,10 @@ go
 /* Table: STUDENT                                               */
 /*==============================================================*/
 create table STUDENT (
-   SID                  char(10)             not null,
+   SID                  int                  not null,
    SNAME                varchar(30)          not null,
    SEMAIL               varchar(30)          not null,
-   SPASSWORD            varchar(20)          not null,
+   SPASSWORD            varchar(64)          not null,
    constraint PK_STUDENT primary key nonclustered (SID)
 )
 go
@@ -370,50 +275,5 @@ go
 create index TEACHES2_FK on TEACHES (
 IID ASC
 )
-go
-
-alter table COURSE
-   add constraint FK_COURSE_REQUIRE_EXAM foreign key (EXAMNAME)
-      references EXAM (EXAMNAME)
-go
-
-alter table ENROLL_IN
-   add constraint FK_ENROLL_I_ENROLL_IN_STUDENT foreign key (SID)
-      references STUDENT (SID)
-go
-
-alter table ENROLL_IN
-   add constraint FK_ENROLL_I_ENROLL_IN_COURSE foreign key (CID)
-      references COURSE (CID)
-go
-
-alter table EXAM
-   add constraint FK_EXAM_REQUIRE2_COURSE foreign key (CID)
-      references COURSE (CID)
-go
-
-alter table EXAMRESULT
-   add constraint FK_EXAMRESU_HAS_STUDENT foreign key (SID)
-      references STUDENT (SID)
-go
-
-alter table EXAMRESULT
-   add constraint FK_EXAMRESU_RECORD_EXAM foreign key (EXAMNAME)
-      references EXAM (EXAMNAME)
-go
-
-alter table LEARNINGOBJECT
-   add constraint FK_LEARNING_INCLUDE_COURSE foreign key (CID)
-      references COURSE (CID)
-go
-
-alter table TEACHES
-   add constraint FK_TEACHES_TEACHES_COURSE foreign key (CID)
-      references COURSE (CID)
-go
-
-alter table TEACHES
-   add constraint FK_TEACHES_TEACHES2_INSTRUCT foreign key (IID)
-      references INSTRUCTOR (IID)
 go
 
