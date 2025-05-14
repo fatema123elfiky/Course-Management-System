@@ -1,6 +1,6 @@
 ﻿namespace Course_Managment
 {
-    partial class Form1
+    partial class Course
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Course
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "Course";
+            this.Text = "Course";
+            this.Load += new System.EventHandler(this.Course_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

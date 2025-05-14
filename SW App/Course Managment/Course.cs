@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Course_Managment
 {
-    public partial class Form1 : Form
+    public partial class Course : Form
     {
-        public Form1()
+        public Course()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Course_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
