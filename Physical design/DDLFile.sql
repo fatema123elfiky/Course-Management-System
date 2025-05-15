@@ -207,7 +207,7 @@ go
 /* Table: ENROLL_IN                                             */
 /*==============================================================*/
 create table ENROLL_IN (
-   SID                  int                  not null IDENTITY(1,1),
+   SID                  int                  not null IDENTITY(20230000,1),
    CID                  int                  not null IDENTITY(1,1),
    SEMESTER             varchar(20)          not null,
    YEAR                 int                  not null,
@@ -237,7 +237,7 @@ go
 /*==============================================================*/
 create table EXAM (
    EXAMNAME             varchar(30)          not null,
-   SID                  int                  null IDENTITY(1,1),
+   SID                  int                  null IDENTITY(20230000,1),
    CID                  int                  not null IDENTITY(1,1),
    DATE                 varchar(30)          not null,
    TYPE                 varchar(20)          not null,
@@ -298,7 +298,7 @@ go
 /* Table: STUDENT                                               */
 /*==============================================================*/
 create table STUDENT (
-   SID                  int                  not null IDENTITY(1,1),
+   SID                  int                  not null IDENTITY(20230000,1),
    SNAME                varchar(30)          not null,
    SEMAIL               varchar(30)          not null,
    SPASSWORD            varchar(64)          not null,
