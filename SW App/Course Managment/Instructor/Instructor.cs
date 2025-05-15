@@ -22,5 +22,11 @@ namespace Course_Managment.Instructor
             Instructor.addInstructor inst = new Instructor.addInstructor();
             inst.ShowDialog();
         }
+
+        private void addStudBtn_Click(object sender, EventArgs e)
+        {
+            Instructor.addStudent stud = new Instructor.addStudent();
+            stud.ShowDialog();
+        }
     }
 }

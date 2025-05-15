@@ -24,6 +24,7 @@ namespace Course_Managment
             this.MaximizeBox = false;
             this.SizeGripStyle = SizeGripStyle.Hide;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.AcceptButton = this.loginButton;
         }
         private void emailLabel_Click(object sender, EventArgs e)
         {

@@ -112,6 +112,7 @@
             this.Controls.Add(this.nameEntry);
             this.Name = "addInstructor";
             this.Text = "Add Instructor";
+            this.Load += new System.EventHandler(this.addInstructor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.emailErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).EndInit();
             this.ResumeLayout(false);

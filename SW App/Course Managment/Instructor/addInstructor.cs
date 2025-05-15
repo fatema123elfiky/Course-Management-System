@@ -22,6 +22,7 @@ namespace Course_Managment.Instructor
             this.MaximizeBox = false;
             this.SizeGripStyle = SizeGripStyle.Hide;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.AcceptButton = this.addButton;
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -68,7 +69,7 @@ namespace Course_Managment.Instructor
                 {
                     con.Open();
                     // Inserting into the Instructor Table
-                    SqlCommand cmd = new SqlCommand(@"INSERT INTO INSTRUCTOR(IID, INAME, IEMAIL, IPASSWORD) VALUES(2, @name, @email, @pass);", con);
+                    SqlCommand cmd = new SqlCommand(@"INSERT INTO INSTRUCTOR(INAME, IEMAIL, IPASSWORD) VALUES(@name, @email, @pass);", con);
                     cmd.Parameters.AddWithValue("@name", name);
                     cmd.Parameters.AddWithValue("@email", email);
                     cmd.Parameters.AddWithValue("@pass", pass);

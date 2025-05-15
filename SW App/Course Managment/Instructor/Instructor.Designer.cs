@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.addInstBtn = new System.Windows.Forms.Button();
+            this.addStudBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addInstBtn
@@ -42,12 +43,24 @@
             this.addInstBtn.UseVisualStyleBackColor = true;
             this.addInstBtn.Click += new System.EventHandler(this.addInstBtn_Click);
             // 
+            // addStudBtn
+            // 
+            this.addStudBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addStudBtn.Location = new System.Drawing.Point(245, 47);
+            this.addStudBtn.Name = "addStudBtn";
+            this.addStudBtn.Size = new System.Drawing.Size(133, 64);
+            this.addStudBtn.TabIndex = 1;
+            this.addStudBtn.Text = "Add Student";
+            this.addStudBtn.UseVisualStyleBackColor = true;
+            this.addStudBtn.Click += new System.EventHandler(this.addStudBtn_Click);
+            // 
             // instructorFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1113, 604);
+            this.Controls.Add(this.addStudBtn);
             this.Controls.Add(this.addInstBtn);
             this.Name = "instructorFrom";
             this.Text = "Instructor";
@@ -58,5 +71,6 @@
         #endregion
 
         private System.Windows.Forms.Button addInstBtn;
+        private System.Windows.Forms.Button addStudBtn;
     }
 }
