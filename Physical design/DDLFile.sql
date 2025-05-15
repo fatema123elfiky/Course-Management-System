@@ -207,8 +207,8 @@ go
 /* Table: ENROLL_IN                                             */
 /*==============================================================*/
 create table ENROLL_IN (
-   SID                  int                  not null IDENTITY(20230000,1),
-   CID                  int                  not null IDENTITY(1,1),
+   SID                  int                  not null ,
+   CID                  int                  not null ,
    SEMESTER             varchar(20)          not null,
    YEAR                 int                  not null,
    GRADE                float                null,
@@ -237,8 +237,8 @@ go
 /*==============================================================*/
 create table EXAM (
    EXAMNAME             varchar(30)          not null,
-   SID                  int                  null IDENTITY(20230000,1),
-   CID                  int                  not null IDENTITY(1,1),
+   SID                  int                  null ,
+   CID                  int                  not null ,
    DATE                 varchar(30)          not null,
    TYPE                 varchar(20)          not null,
    GRADE                float                null,
@@ -310,8 +310,8 @@ go
 /* Table: TEACHES                                               */
 /*==============================================================*/
 create table TEACHES (
-   CID                  int                  not null IDENTITY(1,1),
-   IID                  int                  not null IDENTITY(1,1),
+   CID                  int                  not null ,
+   IID                  int                  not null ,
    SEMSTER              varchar(20)          not null,
    YEAR                 int                  not null,
    constraint PK_TEACHES primary key (CID, IID)
@@ -374,4 +374,3 @@ alter table TEACHES
    add constraint FK_TEACHES_TEACHES2_INSTRUCT foreign key (IID)
       references INSTRUCTOR (IID)
 go
-
