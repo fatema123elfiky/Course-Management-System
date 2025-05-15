@@ -185,7 +185,7 @@ go
 /* Table: COURSE                                                */
 /*==============================================================*/
 create table COURSE (
-   CID                  int                  not null,
+   CID                  int                  not null IDENTITY(1,1),
    EXAMNAME             varchar(30)          null,
    CRSNAME              varchar(30)          not null,
    CATEGORY             varchar(30)          not null,
@@ -207,8 +207,8 @@ go
 /* Table: ENROLL_IN                                             */
 /*==============================================================*/
 create table ENROLL_IN (
-   SID                  int                  not null,
-   CID                  int                  not null,
+   SID                  int                  not null IDENTITY(1,1),
+   CID                  int                  not null IDENTITY(1,1),
    SEMESTER             varchar(20)          not null,
    YEAR                 int                  not null,
    GRADE                float                null,
@@ -237,8 +237,8 @@ go
 /*==============================================================*/
 create table EXAM (
    EXAMNAME             varchar(30)          not null,
-   SID                  int                  null,
-   CID                  int                  not null,
+   SID                  int                  null IDENTITY(1,1),
+   CID                  int                  not null IDENTITY(1,1),
    DATE                 varchar(30)          not null,
    TYPE                 varchar(20)          not null,
    GRADE                float                null,
@@ -266,7 +266,7 @@ go
 /* Table: INSTRUCTOR                                            */
 /*==============================================================*/
 create table INSTRUCTOR (
-   IID                  int                  not null,
+   IID                  int                  not null IDENTITY(1,1),
    INAME                varchar(30)          not null,
    IEMAIL               varchar(30)          not null,
    IPASSWORD            varchar(64)          not null,
@@ -279,7 +279,7 @@ go
 /*==============================================================*/
 create table LEARNINGOBJECT (
    CONTENTURL           varchar(50)          not null,
-   CID                  int                  not null,
+   CID                  int                  not null IDENTITY(1,1),
    TITLE                varchar(30)          not null,
    TYPE                 varchar(20)          not null,
    constraint PK_LEARNINGOBJECT primary key (TITLE, CID)
@@ -298,7 +298,7 @@ go
 /* Table: STUDENT                                               */
 /*==============================================================*/
 create table STUDENT (
-   SID                  int                  not null,
+   SID                  int                  not null IDENTITY(1,1),
    SNAME                varchar(30)          not null,
    SEMAIL               varchar(30)          not null,
    SPASSWORD            varchar(64)          not null,
@@ -310,8 +310,8 @@ go
 /* Table: TEACHES                                               */
 /*==============================================================*/
 create table TEACHES (
-   CID                  int                  not null,
-   IID                  int                  not null,
+   CID                  int                  not null IDENTITY(1,1),
+   IID                  int                  not null IDENTITY(1,1),
    SEMSTER              varchar(20)          not null,
    YEAR                 int                  not null,
    constraint PK_TEACHES primary key (CID, IID)
