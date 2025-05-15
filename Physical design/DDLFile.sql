@@ -298,7 +298,7 @@ go
 /* Table: STUDENT                                               */
 /*==============================================================*/
 create table STUDENT (
-   SID                  int                  not null IDENTITY(20230000,1),
+   SID                  int                  not null IDENTITY(1,1),
    SNAME                varchar(30)          not null,
    SEMAIL               varchar(30)          not null,
    SPASSWORD            varchar(64)          not null,

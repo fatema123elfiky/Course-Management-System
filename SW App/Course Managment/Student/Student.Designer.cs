@@ -1,6 +1,6 @@
 ﻿namespace Course_Managment.Student
 {
-    partial class Stud
+    partial class Student
     {
         /// <summary>
         /// Required designer variable.
