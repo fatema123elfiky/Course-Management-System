@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Course_Managment.Instructor
 {
-    public partial class Instruc : Form
+    public partial class Form1 : Form
     {
-        public Instruc()
+        public Form1()
         {
             InitializeComponent();
         }

@@ -64,11 +64,17 @@
     <Compile Include="Common\TopFive.Designer.cs">
       <DependentUpon>TopFive.cs</DependentUpon>
     </Compile>
-    <Compile Include="Course.cs">
+    <Compile Include="Instructor\addInstructor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Course.Designer.cs">
-      <DependentUpon>Course.cs</DependentUpon>
+    <Compile Include="Instructor\addInstructor.Designer.cs">
+      <DependentUpon>addInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Instructor\Adds\AddCrs.cs">
       <SubType>Form</SubType>
@@ -100,11 +106,11 @@
     <Compile Include="Instructor\HighRegis.Designer.cs">
       <DependentUpon>HighRegis.cs</DependentUpon>
     </Compile>
-    <Compile Include="Instructor\Instruc.cs">
+    <Compile Include="Instructor\Instructor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Instructor\Instruc.Designer.cs">
-      <DependentUpon>Instruc.cs</DependentUpon>
+    <Compile Include="Instructor\Instructor.Designer.cs">
+      <DependentUpon>Instructor.cs</DependentUpon>
     </Compile>
     <Compile Include="Instructor\Upd&amp;del\DelCrs.cs">
       <SubType>Form</SubType>
@@ -132,11 +138,11 @@
     <Compile Include="Student\Adds\AddEnroll.Designer.cs">
       <DependentUpon>AddEnroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student\Stud.cs">
+    <Compile Include="Student\Student.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Student\Stud.Designer.cs">
-      <DependentUpon>Stud.cs</DependentUpon>
+    <Compile Include="Student\Student.Designer.cs">
+      <DependentUpon>Student.cs</DependentUpon>
     </Compile>
     <Compile Include="Student\Upd&amp;del\DelEnroll.cs">
       <SubType>Form</SubType>
@@ -150,8 +156,14 @@
     <Compile Include="Student\Upd&amp;del\UpdStud.Designer.cs">
       <DependentUpon>UpdStud.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Course.resx">
-      <DependentUpon>Course.cs</DependentUpon>
+    <EmbeddedResource Include="Instructor\addInstructor.resx">
+      <DependentUpon>addInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instructor\Instructor.resx">
+      <DependentUpon>Instructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

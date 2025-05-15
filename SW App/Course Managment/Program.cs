@@ -16,7 +16,10 @@ namespace Course_Managment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Course());
+            using (var login = new Login())
+            {
+                Application.Run(login);
+            }
         }
     }
 }

@@ -1,0 +1,12 @@
+D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\bin\Debug\Course Managment.exe.config
+D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\bin\Debug\Course Managment.exe
+D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\bin\Debug\Course Managment.pdb
+D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\obj\Debug\Course Management.csproj.AssemblyReference.cache
+D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\obj\Debug\Course_Managment.Properties.Resources.resources
+D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\obj\Debug\Course Management.csproj.GenerateResource.cache
+D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\obj\Debug\Course Management.csproj.CoreCompileInputs.cache
+D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\obj\Debug\Course Managment.exe
+D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\obj\Debug\Course Managment.pdb
+D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\obj\Debug\Course_Managment.Login.resources
+D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\obj\Debug\Course_Managment.Instructor.addInstructor.resources
+D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\obj\Debug\Course_Managment.Instructor.instructorFrom.resources

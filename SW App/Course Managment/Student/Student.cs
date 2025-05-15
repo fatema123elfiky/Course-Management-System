@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Course_Managment
+namespace Course_Managment.Student
 {
-    public partial class Course : Form
+    public partial class Student : Form
     {
-        public Course()
+        public Student()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Course_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
