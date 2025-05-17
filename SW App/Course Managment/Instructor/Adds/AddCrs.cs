@@ -13,6 +13,7 @@ namespace Course_Managment.Instructor.Adds
 {
     public partial class AddCrs : Form
     {
+        
         public AddCrs()
         {
             InitializeComponent();
@@ -79,12 +80,12 @@ namespace Course_Managment.Instructor.Adds
         private void AddCrs_Load(object sender, EventArgs e)
         {
             
-            // this.cOURSETableAdapter.Fill(this.coureManagementDataSet.COURSE);
+            // this.cOURSETableAdapter.Fill(this.CrsManagementDataSet.COURSE);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.cOURSETableAdapter.Fill(this.coureManagementDataSet.COURSE);
+            this.cOURSETableAdapter.Fill(this.CrsManagementDataSet.COURSE);
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -133,6 +134,11 @@ namespace Course_Managment.Instructor.Adds
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }
