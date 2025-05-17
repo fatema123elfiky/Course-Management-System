@@ -45,13 +45,14 @@ namespace Course_Managment.Instructor.Adds
             this.iSHIDDENDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.eXAMCIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cOURSEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.coureManagementDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CrsManagementDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CrsManagementDataSet = new Course_Managment.CrsManagementDataSet();
             this.cOURSETableAdapter = new Course_Managment.CrsManagementDataSetTableAdapters.COURSETableAdapter();
             this.button2 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOURSEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CrsManagementDataSetBindingSource)).BeginInit();
@@ -60,7 +61,7 @@ namespace Course_Managment.Instructor.Adds
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(222, 431);
+            this.button1.Location = new System.Drawing.Point(227, 407);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 40);
             this.button1.TabIndex = 0;
@@ -85,7 +86,7 @@ namespace Course_Managment.Instructor.Adds
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SlateBlue;
-            this.label2.Location = new System.Drawing.Point(79, 114);
+            this.label2.Location = new System.Drawing.Point(84, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 23);
             this.label2.TabIndex = 2;
@@ -97,7 +98,7 @@ namespace Course_Managment.Instructor.Adds
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SlateBlue;
-            this.label3.Location = new System.Drawing.Point(79, 191);
+            this.label3.Location = new System.Drawing.Point(84, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 23);
             this.label3.TabIndex = 3;
@@ -109,7 +110,7 @@ namespace Course_Managment.Instructor.Adds
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SlateBlue;
-            this.label4.Location = new System.Drawing.Point(79, 270);
+            this.label4.Location = new System.Drawing.Point(84, 246);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 23);
             this.label4.TabIndex = 4;
@@ -118,7 +119,7 @@ namespace Course_Managment.Instructor.Adds
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(341, 114);
+            this.textBox1.Location = new System.Drawing.Point(346, 90);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(256, 26);
             this.textBox1.TabIndex = 5;
@@ -126,7 +127,7 @@ namespace Course_Managment.Instructor.Adds
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(341, 188);
+            this.textBox2.Location = new System.Drawing.Point(346, 164);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(256, 26);
             this.textBox2.TabIndex = 6;
@@ -134,7 +135,7 @@ namespace Course_Managment.Instructor.Adds
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(341, 267);
+            this.textBox3.Location = new System.Drawing.Point(346, 243);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(256, 26);
             this.textBox3.TabIndex = 7;
@@ -230,7 +231,7 @@ namespace Course_Managment.Instructor.Adds
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(906, 405);
+            this.button2.Location = new System.Drawing.Point(910, 422);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 49);
             this.button2.TabIndex = 9;
@@ -241,24 +242,24 @@ namespace Course_Managment.Instructor.Adds
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(375, 341);
+            this.radioButton1.Location = new System.Drawing.Point(385, 347);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 24);
+            this.radioButton1.Size = new System.Drawing.Size(54, 24);
             this.radioButton1.TabIndex = 10;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Yes";
+            this.radioButton1.Text = "No";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(375, 371);
+            this.radioButton2.Location = new System.Drawing.Point(385, 317);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(54, 24);
+            this.radioButton2.Size = new System.Drawing.Size(62, 24);
             this.radioButton2.TabIndex = 11;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "No";
+            this.radioButton2.Text = "Yes";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -267,18 +268,29 @@ namespace Course_Managment.Instructor.Adds
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SlateBlue;
-            this.label5.Location = new System.Drawing.Point(79, 342);
+            this.label5.Location = new System.Drawing.Point(84, 318);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 23);
             this.label5.TabIndex = 12;
             this.label5.Text = "Avalible Now";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(33, 442);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(125, 40);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Back";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // AddCrs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1282, 504);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -329,5 +341,6 @@ namespace Course_Managment.Instructor.Adds
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
     }
 }
