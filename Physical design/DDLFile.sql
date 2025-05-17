@@ -294,6 +294,43 @@ CID ASC
 )
 go
 
+
+
+/*==============================================================*/
+/* Table: EXAMRESULT                                                */
+/*==============================================================*/
+create table EXAMRESULT (
+   SID                    int                    not null,
+   CID                  int                  not null ,
+   EXAMNAME             varchar(30)          not null,
+   GRADE                  float                  null,
+   constraint PK_COURSE primary key nonclustered (SID,CID,EXAMNAME)
+)
+go
+
+/*==============================================================*/
+/* Index: EXAMRESULT_FK                                            */
+/*==============================================================*/
+create index EXAMRESULT_FK on EXAMRESULT (
+SID ASC
+)
+go
+/*==============================================================*/
+/* Index: EXAMRESULT1_FK                                            */
+/*==============================================================*/
+create index EXAMRESULT1_FK on EXAMRESULT (
+CID ASC
+)
+go
+/*==============================================================*/
+/* Index: EXAMRESULT2_FK                                            */
+/*==============================================================*/
+create index EXAMRESULT2_FK on EXAMRESULT (
+EXAMNAME ASC
+)
+go
+
+   
 /*==============================================================*/
 /* Table: STUDENT                                               */
 /*==============================================================*/
