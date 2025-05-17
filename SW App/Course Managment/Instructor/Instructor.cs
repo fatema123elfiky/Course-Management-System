@@ -12,9 +12,11 @@ namespace Course_Managment.Instructor
 {
     public partial class instructorFrom : Form
     {
-        public instructorFrom()
+        int instID;
+        public instructorFrom(int instID)
         {
             InitializeComponent();
+            this.instID = instID;
         }
 
         private void addInstBtn_Click(object sender, EventArgs e)

@@ -12,9 +12,11 @@ namespace Course_Managment.Student
 {
     public partial class Student : Form
     {
-        public Student()
+        int studId;
+        public Student(int studId)
         {
             InitializeComponent();
+            this.studId = studId;
         }
     }
 }
