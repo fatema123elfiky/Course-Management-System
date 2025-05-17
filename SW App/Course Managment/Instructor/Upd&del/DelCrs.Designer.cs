@@ -35,18 +35,18 @@ namespace Course_Managment.Instructor.Upd_del
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.coureManagementDataSet = new Course_Managment.CoureManagementDataSet();
-            this.cOURSEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cOURSETableAdapter = new Course_Managment.CoureManagementDataSetTableAdapters.COURSETableAdapter();
             this.cIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eXAMNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cRSNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cATEGORYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iSHIDDENDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.eXAMCIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cOURSEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CrsManagementDataSet = new Course_Managment.CrsManagementDataSet();
+            this.cOURSETableAdapter = new Course_Managment.CrsManagementDataSetTableAdapters.COURSETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coureManagementDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOURSEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CrsManagementDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -116,20 +116,7 @@ namespace Course_Managment.Instructor.Upd_del
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(629, 331);
             this.dataGridView1.TabIndex = 21;
-            // 
-            // coureManagementDataSet
-            // 
-            this.coureManagementDataSet.DataSetName = "CoureManagementDataSet";
-            this.coureManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cOURSEBindingSource
-            // 
-            this.cOURSEBindingSource.DataMember = "COURSE";
-            this.cOURSEBindingSource.DataSource = this.coureManagementDataSet;
-            // 
-            // cOURSETableAdapter
-            // 
-            this.cOURSETableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // cIDDataGridViewTextBoxColumn
             // 
@@ -180,6 +167,20 @@ namespace Course_Managment.Instructor.Upd_del
             this.eXAMCIDDataGridViewTextBoxColumn.Name = "eXAMCIDDataGridViewTextBoxColumn";
             this.eXAMCIDDataGridViewTextBoxColumn.Width = 150;
             // 
+            // cOURSEBindingSource
+            // 
+            this.cOURSEBindingSource.DataMember = "COURSE";
+            this.cOURSEBindingSource.DataSource = this.CrsManagementDataSet;
+            // 
+            // CrsManagementDataSet
+            // 
+            this.CrsManagementDataSet.DataSetName = "CrsManagementDataSet";
+            this.CrsManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cOURSETableAdapter
+            // 
+            this.cOURSETableAdapter.ClearBeforeFill = true;
+            // 
             // DelCrs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -195,8 +196,8 @@ namespace Course_Managment.Instructor.Upd_del
             this.Text = "Delete course";
             this.Load += new System.EventHandler(this.DelCrs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coureManagementDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOURSEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CrsManagementDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,9 +210,9 @@ namespace Course_Managment.Instructor.Upd_del
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private CoureManagementDataSet coureManagementDataSet;
+        private CrsManagementDataSet CrsManagementDataSet;
         private System.Windows.Forms.BindingSource cOURSEBindingSource;
-        private CoureManagementDataSetTableAdapters.COURSETableAdapter cOURSETableAdapter;
+        private CrsManagementDataSetTableAdapters.COURSETableAdapter cOURSETableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn cIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eXAMNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cRSNAMEDataGridViewTextBoxColumn;
