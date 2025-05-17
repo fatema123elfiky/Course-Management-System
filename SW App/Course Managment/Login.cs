@@ -105,7 +105,7 @@ namespace Course_Managment
                         {
                             int userId = reader.GetInt32(0);
                             this.Hide();
-                            var instructor = new Instructor.instructorFrom();
+                            var instructor = new Instructor.instructorFrom(userId);
                             instructor.FormClosed += (s, args) => Application.Exit();
                             instructor.Show();
                             return;
@@ -121,7 +121,7 @@ namespace Course_Managment
                         {
                             int userId = reader.GetInt32(0);
                             this.Hide();
-                            var student = new Student.Student();
+                            var student = new Student.Student(userId);
                             student.FormClosed += (s, args) => Application.Exit();
                             student.Show();
                             return;
