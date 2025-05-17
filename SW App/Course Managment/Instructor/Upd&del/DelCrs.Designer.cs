@@ -44,6 +44,7 @@ namespace Course_Managment.Instructor.Upd_del
             this.cOURSEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CrsManagementDataSet = new Course_Managment.CrsManagementDataSet();
             this.cOURSETableAdapter = new Course_Managment.CrsManagementDataSetTableAdapters.COURSETableAdapter();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOURSEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CrsManagementDataSet)).BeginInit();
@@ -181,11 +182,21 @@ namespace Course_Managment.Instructor.Upd_del
             // 
             this.cOURSETableAdapter.ClearBeforeFill = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(36, 557);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(125, 40);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "Back";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // DelCrs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 628);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
@@ -219,5 +230,6 @@ namespace Course_Managment.Instructor.Upd_del
         private System.Windows.Forms.DataGridViewTextBoxColumn cATEGORYDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn iSHIDDENDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eXAMCIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button3;
     }
 }
