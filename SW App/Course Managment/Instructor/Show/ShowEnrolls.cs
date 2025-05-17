@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Course_Managment.Instructor
+namespace Course_Managment.Instructor.Show
 {
-    public partial class HighRegis : Form
+    public partial class ShowEnrolls : Form
     {
-        public HighRegis()
+        public ShowEnrolls()
         {
             InitializeComponent();
         }

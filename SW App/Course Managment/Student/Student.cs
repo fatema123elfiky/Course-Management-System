@@ -18,5 +18,30 @@ namespace Course_Managment.Student
             InitializeComponent();
             this.studId = studId;
         }
+
+        private void ADDENROLL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DELENROLL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Shwmyenroll_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void shwcrs_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UPDSTUD_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

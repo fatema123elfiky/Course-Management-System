@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Course_Managment.Common
+namespace Course_Managment.Instructor.Show
 {
-    public partial class TopFive : Form
+    public partial class ShowInstructs : Form
     {
-        public TopFive()
+        public ShowInstructs()
         {
             InitializeComponent();
         }
