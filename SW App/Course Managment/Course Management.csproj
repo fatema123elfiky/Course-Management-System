@@ -167,6 +167,9 @@
     <Compile Include="Student\Upd&amp;del\UpdStud.Designer.cs">
       <DependentUpon>UpdStud.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Common\ShowCrs.resx">
+      <DependentUpon>ShowCrs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Instructor\addInstructor.resx">
       <DependentUpon>addInstructor.cs</DependentUpon>
     </EmbeddedResource>

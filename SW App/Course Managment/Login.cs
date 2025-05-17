@@ -1,14 +1,15 @@
-﻿using System;
+﻿using Course_Managment.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Security.Cryptography;
 
 namespace Course_Managment
 {
@@ -130,14 +131,14 @@ namespace Course_Managment
                     invalidCredsLabel.Text = "Invalid Email or Password";
                 }
 
-                
+
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            
+
         }
     }
 }
