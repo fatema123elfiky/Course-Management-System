@@ -11,3 +11,15 @@ D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course
 D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\obj\Debug\Course_Managment.Instructor.addInstructor.resources
 D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\obj\Debug\Course_Managment.Instructor.instructorFrom.resources
 D:\College Files\Level 2\Second Semester\Introduction to Database Systems\Course Management System\SW App\Course Managment\obj\Debug\Course_Managment.Instructor.addStudent.resources
+C:\Users\Fatma\DatabaseProject\Course-Management-System\SW App\Course Managment\obj\Debug\Course Management.csproj.AssemblyReference.cache
+C:\Users\Fatma\DatabaseProject\Course-Management-System\SW App\Course Managment\obj\Debug\Course Managment.exe.config
+C:\Users\Fatma\DatabaseProject\Course-Management-System\SW App\Course Managment\obj\Debug\Course_Managment.Instructor.addInstructor.resources
+C:\Users\Fatma\DatabaseProject\Course-Management-System\SW App\Course Managment\obj\Debug\Course_Managment.Instructor.addStudent.resources
+C:\Users\Fatma\DatabaseProject\Course-Management-System\SW App\Course Managment\obj\Debug\Course_Managment.Instructor.instructorFrom.resources
+C:\Users\Fatma\DatabaseProject\Course-Management-System\SW App\Course Managment\obj\Debug\Course_Managment.Login.resources
+C:\Users\Fatma\DatabaseProject\Course-Management-System\SW App\Course Managment\obj\Debug\Course_Managment.Properties.Resources.resources
+C:\Users\Fatma\DatabaseProject\Course-Management-System\SW App\Course Managment\obj\Debug\Course_Managment.Student.Adds.AddEnroll.resources
+C:\Users\Fatma\DatabaseProject\Course-Management-System\SW App\Course Managment\obj\Debug\Course Management.csproj.GenerateResource.cache
+C:\Users\Fatma\DatabaseProject\Course-Management-System\SW App\Course Managment\obj\Debug\Course Management.csproj.CoreCompileInputs.cache
+C:\Users\Fatma\DatabaseProject\Course-Management-System\SW App\Course Managment\obj\Debug\Course Managment.exe
+C:\Users\Fatma\DatabaseProject\Course-Management-System\SW App\Course Managment\obj\Debug\Course Managment.pdb

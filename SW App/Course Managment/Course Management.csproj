@@ -64,6 +64,11 @@
     <Compile Include="Common\TopFive.Designer.cs">
       <DependentUpon>TopFive.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrsManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrsManagementDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Instructor\addInstructor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +188,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Student\Adds\AddEnroll.resx">
+      <DependentUpon>AddEnroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="CrsManagementDataSet.xsc">
+      <DependentUpon>CrsManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CrsManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CrsManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CrsManagementDataSet.xss">
+      <DependentUpon>CrsManagementDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
