@@ -85,17 +85,20 @@ namespace Course_Managment.Instructor.Upd_del
 
         private void DelCrs_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'coureManagementDataSet.COURSE' table. You can move, or remove it, as needed.
-            this.cOURSETableAdapter.Fill(this.coureManagementDataSet.COURSE);
+            // TODO: This line of code loads data into the 'CrsManagementDataSet.COURSE' table. You can move, or remove it, as needed.
+            //this.cOURSETableAdapter.Fill(this.CrsManagementDataSet.COURSE);
 
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            this.cOURSETableAdapter.Fill(this.coureManagementDataSet.COURSE);
+            this.cOURSETableAdapter.Fill(this.CrsManagementDataSet.COURSE);
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }
 
