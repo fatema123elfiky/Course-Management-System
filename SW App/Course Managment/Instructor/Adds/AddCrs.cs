@@ -37,7 +37,7 @@ namespace Course_Managment.Instructor.Adds
             // Determine ISHIDDEN value based on radio button
             bool isHidden = radioButton1.Checked;
 
-            using (SqlConnection connect = new SqlConnection(@"Data Source=Malak;Initial Catalog=CoureManagement; Integrated Security=True; Encrypt=True; TrustServerCertificate=True;"))
+            using (SqlConnection connect = new SqlConnection(@"Data Source=(local);Initial Catalog=CrsManagement; Integrated Security=True; Encrypt=True; TrustServerCertificate=True;"))
             {
                 try
                 {
