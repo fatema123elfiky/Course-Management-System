@@ -28,7 +28,7 @@ namespace Course_Managment.Student.Adds
         {
             string query = "SELECT * FROM ENROLL_IN WHERE SID = '" + StudIDText.Text
                  + "'";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, "Data Source=LAPTOP-PQTFRSSC;Initial Catalog=CrsManagement;Integrated Security=True");
+            SqlDataAdapter adapter = new SqlDataAdapter(query, "Data Source=(local);Initial Catalog=CrsManagement;Integrated Security=True");
             DataTable table = new DataTable();
             adapter.Fill(table);
             dataGridView1.DataSource = table;
@@ -42,7 +42,7 @@ namespace Course_Managment.Student.Adds
 
         private void Add_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection("Data Source=LAPTOP-PQTFRSSC;Initial Catalog=CrsManagement;Integrated Security=True");
+            SqlConnection connection = new SqlConnection("Data Source=(local);Initial Catalog=CrsManagement;Integrated Security=True");
             SqlCommand cmd = new SqlCommand();
             SqlCommand validation =new SqlCommand();
             validation.Connection = connection;
@@ -53,26 +53,15 @@ namespace Course_Managment.Student.Adds
             ////validation for sid
             
             
-            if (string.IsNullOrEmpty(CrsIDText.Text.Trim()))
+            if (string.IsNullOrEmpty(CrsIDText.Text.Trim())||
+                string.IsNullOrEmpty(StudIDText.Text.Trim())||
+                string.IsNullOrEmpty(SemesterText.Text.Trim())||
+                string.IsNullOrEmpty(YearText.Text.Trim()))
             {
-                MessageBox.Show("Crs ID field is empty !!");
+                MessageBox.Show("There are empty fields !!");
                 return;
             }
-            if (string.IsNullOrEmpty(StudIDText.Text.Trim()))
-            {
-                MessageBox.Show("Student ID field is empty !!");
-                return;
-            }
-            if (string.IsNullOrEmpty(SemesterText.Text.Trim()))
-            {
-                MessageBox.Show("Semester field is empty !!");
-                return;
-            }
-            if (string.IsNullOrEmpty(YearText.Text.Trim()))
-            {
-                MessageBox.Show("Year field is empty !!");
-                return;
-            }
+         
 
             validation.CommandText = "SELECT COUNT(*) FROM STUDENT WHERE SID = '" + StudIDText.Text + "'";
             int studentExists = (int)validation.ExecuteScalar();

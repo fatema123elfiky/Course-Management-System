@@ -30,5 +30,50 @@ namespace Course_Managment.Instructor
             Instructor.addStudent stud = new Instructor.addStudent();
             stud.ShowDialog();
         }
+
+        private void showcrs_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showstud_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Showinstructs_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showenrolls_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addCrs_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdCrs_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delCrs_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdInstruc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addGrade_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

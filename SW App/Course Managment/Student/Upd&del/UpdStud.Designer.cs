@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.Welcome = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.StudIDText = new System.Windows.Forms.TextBox();
+            this.EmailText = new System.Windows.Forms.TextBox();
+            this.PasswordText = new System.Windows.Forms.TextBox();
+            this.NameText = new System.Windows.Forms.TextBox();
             this.StudentID = new System.Windows.Forms.Label();
             this.Password = new System.Windows.Forms.Label();
-            this.Name = new System.Windows.Forms.Label();
+            this.NameLbl = new System.Windows.Forms.Label();
             this.Email = new System.Windows.Forms.Label();
             this.Update = new System.Windows.Forms.Button();
             this.GoBack = new System.Windows.Forms.Button();
@@ -51,33 +51,33 @@
             this.Welcome.TabIndex = 0;
             this.Welcome.Text = "UPDATE STUDENT INFO";
             // 
-            // textBox1
+            // StudIDText
             // 
-            this.textBox1.Location = new System.Drawing.Point(182, 143);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 22);
-            this.textBox1.TabIndex = 1;
+            this.StudIDText.Location = new System.Drawing.Point(182, 143);
+            this.StudIDText.Name = "StudIDText";
+            this.StudIDText.Size = new System.Drawing.Size(163, 22);
+            this.StudIDText.TabIndex = 1;
             // 
-            // textBox2
+            // EmailText
             // 
-            this.textBox2.Location = new System.Drawing.Point(518, 143);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(163, 22);
-            this.textBox2.TabIndex = 2;
+            this.EmailText.Location = new System.Drawing.Point(518, 143);
+            this.EmailText.Name = "EmailText";
+            this.EmailText.Size = new System.Drawing.Size(163, 22);
+            this.EmailText.TabIndex = 2;
             // 
-            // textBox3
+            // PasswordText
             // 
-            this.textBox3.Location = new System.Drawing.Point(182, 192);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(163, 22);
-            this.textBox3.TabIndex = 3;
+            this.PasswordText.Location = new System.Drawing.Point(182, 192);
+            this.PasswordText.Name = "PasswordText";
+            this.PasswordText.Size = new System.Drawing.Size(163, 22);
+            this.PasswordText.TabIndex = 3;
             // 
-            // textBox4
+            // NameText
             // 
-            this.textBox4.Location = new System.Drawing.Point(518, 192);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(163, 22);
-            this.textBox4.TabIndex = 4;
+            this.NameText.Location = new System.Drawing.Point(518, 192);
+            this.NameText.Name = "NameText";
+            this.NameText.Size = new System.Drawing.Size(163, 22);
+            this.NameText.TabIndex = 4;
             // 
             // StudentID
             // 
@@ -97,14 +97,14 @@
             this.Password.TabIndex = 6;
             this.Password.Text = "Password";
             // 
-            // Name
+            // NameLbl
             // 
-            this.Name.AutoSize = true;
-            this.Name.Location = new System.Drawing.Point(448, 198);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(44, 16);
-            this.Name.TabIndex = 7;
-            this.Name.Text = "Name";
+            this.NameLbl.AutoSize = true;
+            this.NameLbl.Location = new System.Drawing.Point(448, 198);
+            this.NameLbl.Name = "NameLbl";
+            this.NameLbl.Size = new System.Drawing.Size(44, 16);
+            this.NameLbl.TabIndex = 7;
+            this.NameLbl.Text = "Name";
             // 
             // Email
             // 
@@ -123,6 +123,7 @@
             this.Update.TabIndex = 9;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = true;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
             // GoBack
             // 
@@ -132,6 +133,7 @@
             this.GoBack.TabIndex = 10;
             this.GoBack.Text = "GoBack";
             this.GoBack.UseVisualStyleBackColor = true;
+            this.GoBack.Click += new System.EventHandler(this.GoBack_Click);
             // 
             // UpdStud
             // 
@@ -141,13 +143,13 @@
             this.Controls.Add(this.GoBack);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.Email);
-            this.Controls.Add(this.Name);
+            this.Controls.Add(this.NameLbl);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.StudentID);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NameText);
+            this.Controls.Add(this.PasswordText);
+            this.Controls.Add(this.EmailText);
+            this.Controls.Add(this.StudIDText);
             this.Controls.Add(this.Welcome);
             this.Name = "UpdStud";
             this.Text = "UpdStud";
@@ -159,13 +161,13 @@
         #endregion
 
         private System.Windows.Forms.Label Welcome;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox StudIDText;
+        private System.Windows.Forms.TextBox EmailText;
+        private System.Windows.Forms.TextBox PasswordText;
+        private System.Windows.Forms.TextBox NameText;
         private System.Windows.Forms.Label StudentID;
         private System.Windows.Forms.Label Password;
-        private System.Windows.Forms.Label Name;
+        private System.Windows.Forms.Label NameLbl;
         private System.Windows.Forms.Label Email;
         private System.Windows.Forms.Button Update;
         private System.Windows.Forms.Button GoBack;

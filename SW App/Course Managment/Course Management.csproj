@@ -167,9 +167,6 @@
     <Compile Include="Student\Upd&amp;del\UpdStud.Designer.cs">
       <DependentUpon>UpdStud.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Common\ShowCrs.resx">
-      <DependentUpon>ShowCrs.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Instructor\addInstructor.resx">
       <DependentUpon>addInstructor.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +190,12 @@
     </Compile>
     <EmbeddedResource Include="Student\Adds\AddEnroll.resx">
       <DependentUpon>AddEnroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Upd&amp;del\DelEnroll.resx">
+      <DependentUpon>DelEnroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Upd&amp;del\UpdStud.resx">
+      <DependentUpon>UpdStud.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CrsManagementDataSet.xsc">
       <DependentUpon>CrsManagementDataSet.xsd</DependentUpon>
