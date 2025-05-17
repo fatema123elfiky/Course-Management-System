@@ -46,16 +46,16 @@ namespace Course_Managment.Instructor.Adds
             this.eXAMCIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cOURSEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.coureManagementDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.coureManagementDataSet = new Course_Managment.CoureManagementDataSet();
-            this.cOURSETableAdapter = new Course_Managment.CoureManagementDataSetTableAdapters.COURSETableAdapter();
+            this.CrsManagementDataSet = new Course_Managment.CrsManagementDataSet();
+            this.cOURSETableAdapter = new Course_Managment.CrsManagementDataSetTableAdapters.COURSETableAdapter();
             this.button2 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOURSEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coureManagementDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coureManagementDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CrsManagementDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CrsManagementDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -212,17 +212,17 @@ namespace Course_Managment.Instructor.Adds
             // cOURSEBindingSource
             // 
             this.cOURSEBindingSource.DataMember = "COURSE";
-            this.cOURSEBindingSource.DataSource = this.coureManagementDataSetBindingSource;
+            this.cOURSEBindingSource.DataSource = this.CrsManagementDataSetBindingSource;
             // 
-            // coureManagementDataSetBindingSource
+            // CrsManagementDataSetBindingSource
             // 
-            this.coureManagementDataSetBindingSource.DataSource = this.coureManagementDataSet;
-            this.coureManagementDataSetBindingSource.Position = 0;
+            this.CrsManagementDataSetBindingSource.DataSource = this.CrsManagementDataSet;
+            this.CrsManagementDataSetBindingSource.Position = 0;
             // 
-            // coureManagementDataSet
+            // CrsManagementDataSet
             // 
-            this.coureManagementDataSet.DataSetName = "CoureManagementDataSet";
-            this.coureManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.CrsManagementDataSet.DataSetName = "CrsManagementDataSet";
+            this.CrsManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cOURSETableAdapter
             // 
@@ -297,8 +297,8 @@ namespace Course_Managment.Instructor.Adds
             this.Load += new System.EventHandler(this.AddCrs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOURSEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coureManagementDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coureManagementDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CrsManagementDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CrsManagementDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,10 +315,10 @@ namespace Course_Managment.Instructor.Adds
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource coureManagementDataSetBindingSource;
-        private CoureManagementDataSet coureManagementDataSet;
+        private System.Windows.Forms.BindingSource CrsManagementDataSetBindingSource;
+        private CrsManagementDataSet CrsManagementDataSet;
         private System.Windows.Forms.BindingSource cOURSEBindingSource;
-        private CoureManagementDataSetTableAdapters.COURSETableAdapter cOURSETableAdapter;
+        private CrsManagementDataSetTableAdapters.COURSETableAdapter cOURSETableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn cIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eXAMNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cRSNAMEDataGridViewTextBoxColumn;
