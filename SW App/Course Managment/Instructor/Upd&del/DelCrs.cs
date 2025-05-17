@@ -32,7 +32,7 @@ namespace Course_Managment.Instructor.Upd_del
                 return;
             }
 
-            string connectionString = @"Data Source=Malak;Initial Catalog=CoureManagement;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+            string connectionString = @"Data Source=(local);Initial Catalog=CrsManagement;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
