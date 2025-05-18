@@ -52,12 +52,7 @@ namespace Course_Managment.Common
                 return;
             }
 
-            int CrsID;
-            if (!int.TryParse(CrsIDText.Text.Trim(), out CrsID))
-            {
-                MessageBox.Show("Please enter a number for the course ID");
-                return;
-            }
+            string CrsID = CrsIDText.Text.Trim();
 
             SqlCommand validation = new SqlCommand("SELECT COUNT(*) FROM COURSE WHERE CID = @cid", connection);
             validation.Parameters.AddWithValue("@cid", CrsID);
