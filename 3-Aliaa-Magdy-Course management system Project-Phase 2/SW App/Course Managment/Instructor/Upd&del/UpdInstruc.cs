@@ -1,41 +1,57 @@
+
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace Course_Managment.Instructor.Upd_del
+
 {
-    public partial class UpdCrs : Form
+    
+    public partial class UpdInstruc : Form
     {
-        private readonly string connectionString = @"Data Source=localhost;Initial Catalog=CrsManagement;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+        
 
+        private readonly string connectionString = @"Data Source=(local);Initial Catalog=CrsManagement;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+        
+       
         instructorFrom previous;
-        public UpdCrs(instructorFrom previous)
+        public UpdInstruc(instructorFrom previous)
         {
-            
-            InitializeComponent();
 
-            btnUpdateExamName.Click += btnUpdateExamName_Click;
-            btnUpdateCourseName.Click += btnUpdateCourseName_Click;
-            btnUpdateCategory.Click += btnUpdateCategory_Click;
-            button1.Click += button1_Click;
-            //button2.Click += button2_Click;
+            InitializeComponent();
+           
+            btnUpdateName.Click += btnUpdateName_Click;
+            btnUpdateEmail.Click += btnUpdateEmail_Click;
+            btnUpdatePassword.Click += btnUpdatePassword_Click;
+            // btnBack.Click += BtnBack_Click;
             this.previous = previous;
         }
 
-        private void UpdCrs_Load(object sender, EventArgs e)
+        private void UpdInstruc_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'crsManagementDataSet.INSTRUCTOR' table. You can move, or remove it, as needed.
+           // this.iNSTRUCTORTableAdapter1.Fill(this.crsManagementDataSet.INSTRUCTOR);
             panel1.Visible = false;
             panel2.Visible = false;
             panel3.Visible = false;
             panel4.Visible = false;
 
             comboBox1.Items.Clear();
-            comboBox1.Items.Add("Exam Name");
-            comboBox1.Items.Add("Course Name");
-            comboBox1.Items.Add("Category");
+            comboBox1.Items.Add("Name");
+            comboBox1.Items.Add("Email");
+            comboBox1.Items.Add("Password");
 
             comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+            //comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,7 +59,7 @@ namespace Course_Managment.Instructor.Upd_del
             string enteredId = txtid.Text.Trim();
             if (string.IsNullOrEmpty(enteredId))
             {
-                MessageBox.Show("Please enter a Course ID.");
+                MessageBox.Show("Please enter an ID.");
                 return;
             }
 
@@ -52,9 +68,9 @@ namespace Course_Managment.Instructor.Upd_del
                 try
                 {
                     con.Open();
-                    string query = "SELECT COUNT(*) FROM COURSE WHERE CID = @CID";
+                    string query = "SELECT COUNT(*) FROM INSTRUCTOR WHERE IID = @IID";
                     SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@CID", enteredId);
+                    cmd.Parameters.AddWithValue("@IID", enteredId);
 
                     int count = (int)cmd.ExecuteScalar();
 
@@ -67,7 +83,7 @@ namespace Course_Managment.Instructor.Upd_del
                     }
                     else
                     {
-                        MessageBox.Show("Course ID not found.");
+                        MessageBox.Show("ID not found.");
                         panel1.Visible = false;
                     }
                 }
@@ -86,31 +102,33 @@ namespace Course_Managment.Instructor.Upd_del
 
             switch (comboBox1.SelectedItem.ToString())
             {
-                case "Exam Name":
+                case "Name":
                     panel2.Visible = true;
                     break;
-                case "Course Name":
+                case "Email":
                     panel3.Visible = true;
                     break;
-                case "Category":
+                case "Password":
                     panel4.Visible = true;
                     break;
             }
         }
 
-        private void btnUpdateExamName_Click(object sender, EventArgs e)
+        private void btnUpdateName_Click(object sender, EventArgs e)
         {
-            UpdateField("EXAMNAME", txtOldExamName.Text.Trim(), txtNewExamName.Text.Trim());
+            UpdateField("INAME", txtOldName.Text.Trim(), txtNewName.Text.Trim());
+           
+
         }
 
-        private void btnUpdateCourseName_Click(object sender, EventArgs e)
+        private void btnUpdateEmail_Click(object sender, EventArgs e)
         {
-            UpdateField("CRSNAME", txtOldCourseName.Text.Trim(), txtNewCourseName.Text.Trim());
+            UpdateField("IEMAIL", txtOldEmail.Text.Trim(), txtNewEmail.Text.Trim());
         }
 
-        private void btnUpdateCategory_Click(object sender, EventArgs e)
+        private void btnUpdatePassword_Click(object sender, EventArgs e)
         {
-            UpdateField("CATEGORY", txtOldCategory.Text.Trim(), txtNewCategory.Text.Trim());
+            UpdateField("IPASSWORD", txtOldPassword.Text.Trim(), txtNewPassword.Text.Trim());
         }
 
         private void UpdateField(string columnName, string oldValue, string newValue)
@@ -129,7 +147,7 @@ namespace Course_Managment.Instructor.Upd_del
                 {
                     con.Open();
 
-                    string checkQuery = $"SELECT COUNT(*) FROM COURSE WHERE CID = @id AND {columnName} = @oldValue";
+                    string checkQuery = $"SELECT COUNT(*) FROM INSTRUCTOR WHERE IID = @id AND {columnName} = @oldValue";
                     SqlCommand checkCmd = new SqlCommand(checkQuery, con);
                     checkCmd.Parameters.AddWithValue("@id", id);
                     checkCmd.Parameters.AddWithValue("@oldValue", oldValue);
@@ -142,7 +160,7 @@ namespace Course_Managment.Instructor.Upd_del
                         return;
                     }
 
-                    string updateQuery = $"UPDATE COURSE SET {columnName} = @newValue WHERE CID = @id";
+                    string updateQuery = $"UPDATE INSTRUCTOR SET {columnName} = @newValue WHERE IID = @id";
                     SqlCommand updateCmd = new SqlCommand(updateQuery, con);
                     updateCmd.Parameters.AddWithValue("@newValue", newValue);
                     updateCmd.Parameters.AddWithValue("@id", id);
@@ -164,18 +182,21 @@ namespace Course_Managment.Instructor.Upd_del
             }
         }
 
-       /* private void button2_Click(object sender, EventArgs e)
+      
+
+        private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-               
-                 this.cOURSETableAdapter.Fill(this.crsManagementDataSet.COURSE);
+                
+                this.iNSTRUCTORTableAdapter1.Fill(this.crsManagementDataSet.INSTRUCTOR);
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-        }*/
+
+        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -185,23 +206,19 @@ namespace Course_Managment.Instructor.Upd_del
             panel4.Visible = false;
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void label12_Click(object sender, EventArgs e)
         {
-            try
-            {
 
-                this.cOURSETableAdapter.Fill(this.crsManagementDataSet.COURSE);
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //dah el baccccccccccccccccccccccccccccckkkkkkkk
+            // // shokran :)
             previous.Show();
             this.Close();
+
         }
     }
-}
+     
+    }
