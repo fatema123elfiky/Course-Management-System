@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +13,12 @@ namespace Course_Managment.Instructor
 {
     public partial class addStudent : Form
     {
+
+        //Student previous;
         public addStudent()
         {
             InitializeComponent();
+           // previous = Form;
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -71,7 +74,7 @@ namespace Course_Managment.Instructor
                     if (rows > 0)
                     {
                         MessageBox.Show("Successfully Added New Student");
-                        this.Close();
+                        //this.Close();
                         return;
                     }
                     else
@@ -90,11 +93,43 @@ namespace Course_Managment.Instructor
 
         private void addStudent_Load(object sender, EventArgs e)
         {
+            try
+            {
+                this.sTUDENTTableAdapter.Fill(this.crsManagementDataSet.STUDENT);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message);
+            }
+            // TODO: This line of code loads data into the 'crsManagementDataSet.STUDENT' table. You can move, or remove it, as needed.
+            // this.sTUDENTTableAdapter.Fill(this.crsManagementDataSet.STUDENT);
             this.MaximizeBox = false;
             this.SizeGripStyle = SizeGripStyle.Hide;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.AcceptButton = this.addButton;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.sTUDENTTableAdapter.Fill(this.crsManagementDataSet.STUDENT);
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+           // previous.Show();
+            this.Close();
+        }
+       
     }
 
 
