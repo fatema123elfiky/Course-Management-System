@@ -41,7 +41,45 @@ namespace Course_Managment.Common
 
         private void TopFive_Click(object sender, EventArgs e)
         {
+            SqlConnection connection = new SqlConnection("Data Source=(local);Initial Catalog=CrsManagement;Integrated Security=True");
+            connection.Open();
 
+            //validation//
+
+            if (string.IsNullOrEmpty(CrsIDText.Text.Trim()))
+            {
+                MessageBox.Show("You have to enter the course ID");
+                return;
+            }
+
+            int CrsID;
+            if (!int.TryParse(CrsIDText.Text.Trim(), out CrsID))
+            {
+                MessageBox.Show("Please enter a number for the course ID");
+                return;
+            }
+
+            SqlCommand validation = new SqlCommand("SELECT COUNT(*) FROM COURSE WHERE CID = @cid", connection);
+            validation.Parameters.AddWithValue("@cid", CrsID);
+
+
+
+            int course = (int)validation.ExecuteScalar();
+            if (course == 0)
+            {
+                MessageBox.Show("Course does not exist.");
+                return;
+            }
+
+
+            // get the top 5 students with the highest grades for a specific course
+            string query = "SELECT TOP 5 SID, SNAME, GRADE FROM ENROLL_IN INNER JOIN STUDENT ON ENROLL_IN.SID = STUDENT.SID WHERE CID = @cid ORDER BY GRADE DESC";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            adapter.SelectCommand.Parameters.AddWithValue("@cid", CrsID);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
+            connection.Close();
         }
 
         private void GradeFilter_Click(object sender, EventArgs e)
