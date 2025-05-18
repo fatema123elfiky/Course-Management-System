@@ -1,4 +1,4 @@
-﻿using Course_Managment.Common;
+using Course_Managment.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +26,7 @@ namespace Course_Managment
             this.SizeGripStyle = SizeGripStyle.Hide;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.AcceptButton = this.loginButton;
+            
         }
         private void emailLabel_Click(object sender, EventArgs e)
         {
@@ -138,6 +139,11 @@ namespace Course_Managment
             {
                 Console.WriteLine(ex.Message);
             }
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }
