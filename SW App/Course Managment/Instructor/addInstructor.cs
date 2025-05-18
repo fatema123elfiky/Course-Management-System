@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +19,8 @@ namespace Course_Managment.Instructor
         }
         private void addInstructor_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'crsManagementDataSet.INSTRUCTOR' table. You can move, or remove it, as needed.
+            //this.iNSTRUCTORTableAdapter.Fill(this.crsManagementDataSet.INSTRUCTOR);
             this.MaximizeBox = false;
             this.SizeGripStyle = SizeGripStyle.Hide;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -93,6 +95,16 @@ namespace Course_Managment.Instructor
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.iNSTRUCTORTableAdapter.Fill(this.crsManagementDataSet.INSTRUCTOR);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //bacccccccccccccccccckkkkk
         }
     }
 }
