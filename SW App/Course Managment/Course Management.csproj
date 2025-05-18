@@ -168,8 +168,17 @@
     <EmbeddedResource Include="Instructor\addStudent.resx">
       <DependentUpon>addStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Instructor\Adds\AddGrade.resx">
+      <DependentUpon>AddGrade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Instructor\Instructor.resx">
       <DependentUpon>Instructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instructor\Upd&amp;del\DelCrs.resx">
+      <DependentUpon>DelCrs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instructor\Upd&amp;del\UpdCrs.resx">
+      <DependentUpon>UpdCrs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instructor\Upd&amp;del\UpdInstruc.resx">
       <DependentUpon>UpdInstruc.cs</DependentUpon>

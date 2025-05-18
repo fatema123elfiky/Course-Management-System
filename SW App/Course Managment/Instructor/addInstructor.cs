@@ -13,9 +13,12 @@ namespace Course_Managment.Instructor
 {
     public partial class addInstructor : Form
     {
-        public addInstructor()
+
+        instructorFrom previous;
+        public addInstructor(instructorFrom previous)
         {
             InitializeComponent();
+            this.previous = previous;
         }
         private void addInstructor_Load(object sender, EventArgs e)
         {
@@ -105,6 +108,9 @@ namespace Course_Managment.Instructor
         private void button1_Click(object sender, EventArgs e)
         {
             //bacccccccccccccccccckkkkk
+            // shorkan yaaa engggggg. :)
+            previous.Show();
+            this.Close();
         }
     }
 }

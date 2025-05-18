@@ -23,7 +23,8 @@ namespace Course_Managment.Instructor.Upd_del
         private readonly string connectionString = @"Data Source=(local);Initial Catalog=CrsManagement;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
         
        
-        public UpdInstruc()
+        instructorFrom previous;
+        public UpdInstruc(instructorFrom previous)
         {
 
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace Course_Managment.Instructor.Upd_del
             btnUpdateEmail.Click += btnUpdateEmail_Click;
             btnUpdatePassword.Click += btnUpdatePassword_Click;
             // btnBack.Click += BtnBack_Click;
+            this.previous = previous;
         }
 
         private void UpdInstruc_Load(object sender, EventArgs e)
@@ -212,6 +214,10 @@ namespace Course_Managment.Instructor.Upd_del
         private void button3_Click(object sender, EventArgs e)
         {
             //dah el baccccccccccccccccccccccccccccckkkkkkkk
+            // // shokran :)
+            previous.Show();
+            this.Close();
+
         }
     }
      

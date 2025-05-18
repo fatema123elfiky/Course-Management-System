@@ -52,9 +52,10 @@ namespace Course_Managment.Instructor.Upd_del
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(315, 180);
+            this.textBox1.Location = new System.Drawing.Point(280, 144);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(256, 26);
+            this.textBox1.Size = new System.Drawing.Size(228, 22);
             this.textBox1.TabIndex = 17;
             // 
             // label2
@@ -62,28 +63,29 @@ namespace Course_Managment.Instructor.Upd_del
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SlateBlue;
-            this.label2.Location = new System.Drawing.Point(53, 180);
+            this.label2.Location = new System.Drawing.Point(47, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 23);
+            this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 14;
             this.label2.Text = "Course ID";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Adobe Song Std L", 18F, System.Drawing.FontStyle.Italic);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic);
             this.label1.ForeColor = System.Drawing.Color.SlateBlue;
-            this.label1.Location = new System.Drawing.Point(170, 91);
+            this.label1.Location = new System.Drawing.Point(151, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 42);
+            this.label1.Size = new System.Drawing.Size(197, 36);
             this.label1.TabIndex = 18;
             this.label1.Text = "Delete course";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(207, 471);
+            this.button1.Location = new System.Drawing.Point(184, 377);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 40);
+            this.button1.Size = new System.Drawing.Size(111, 32);
             this.button1.TabIndex = 13;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
@@ -91,9 +93,10 @@ namespace Course_Managment.Instructor.Upd_del
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(880, 471);
+            this.button2.Location = new System.Drawing.Point(782, 377);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 49);
+            this.button2.Size = new System.Drawing.Size(107, 39);
             this.button2.TabIndex = 22;
             this.button2.Text = "show data";
             this.button2.UseVisualStyleBackColor = true;
@@ -111,11 +114,12 @@ namespace Course_Managment.Instructor.Upd_del
             this.iSHIDDENDataGridViewCheckBoxColumn,
             this.eXAMCIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.cOURSEBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(615, 100);
+            this.dataGridView1.Location = new System.Drawing.Point(547, 80);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(629, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(559, 265);
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -184,18 +188,20 @@ namespace Course_Managment.Instructor.Upd_del
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(36, 557);
+            this.button3.Location = new System.Drawing.Point(32, 446);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 40);
+            this.button3.Size = new System.Drawing.Size(111, 32);
             this.button3.TabIndex = 23;
             this.button3.Text = "Back";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // DelCrs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1297, 628);
+            this.ClientSize = new System.Drawing.Size(1153, 502);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
@@ -203,6 +209,7 @@ namespace Course_Managment.Instructor.Upd_del
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DelCrs";
             this.Text = "Delete course";
             this.Load += new System.EventHandler(this.DelCrs_Load);

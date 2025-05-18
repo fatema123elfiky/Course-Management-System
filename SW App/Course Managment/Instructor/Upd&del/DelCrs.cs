@@ -7,9 +7,11 @@ namespace Course_Managment.Instructor.Upd_del
 {
     public partial class DelCrs : Form
     {
-        public DelCrs()
+        instructorFrom previous;
+        public DelCrs(instructorFrom previous)
         {
             InitializeComponent();
+            this.previous = previous;
         }
 
         
@@ -98,6 +100,12 @@ namespace Course_Managment.Instructor.Upd_del
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            previous.Show();
+            this.Close();
         }
     }
 }

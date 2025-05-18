@@ -33,6 +33,7 @@
             this.UPDSTUD = new System.Windows.Forms.Button();
             this.shwcrs = new System.Windows.Forms.Button();
             this.Welcome = new System.Windows.Forms.Label();
+            this.LogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ADDENROLL
@@ -89,11 +90,24 @@
             this.Welcome.TabIndex = 5;
             this.Welcome.Text = "STUDENT DASHBOARD";
             // 
+            // LogOut
+            // 
+            this.LogOut.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOut.ForeColor = System.Drawing.Color.Red;
+            this.LogOut.Location = new System.Drawing.Point(686, 12);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(102, 31);
+            this.LogOut.TabIndex = 6;
+            this.LogOut.Text = "Log Out";
+            this.LogOut.UseVisualStyleBackColor = true;
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
+            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LogOut);
             this.Controls.Add(this.Welcome);
             this.Controls.Add(this.shwcrs);
             this.Controls.Add(this.UPDSTUD);
@@ -114,5 +128,6 @@
         private System.Windows.Forms.Button UPDSTUD;
         private System.Windows.Forms.Button shwcrs;
         private System.Windows.Forms.Label Welcome;
+        private System.Windows.Forms.Button LogOut;
     }
 }

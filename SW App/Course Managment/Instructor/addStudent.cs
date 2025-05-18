@@ -15,10 +15,12 @@ namespace Course_Managment.Instructor
     {
 
         //Student previous;
-        public addStudent()
+        instructorFrom previous;
+        public addStudent(instructorFrom previous)
         {
             InitializeComponent();
-           // previous = Form;
+            this.previous = previous;
+            // previous = Form;
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -126,7 +128,7 @@ namespace Course_Managment.Instructor
 
         private void Back_Click(object sender, EventArgs e)
         {
-           // previous.Show();
+            previous.Show();
             this.Close();
         }
        

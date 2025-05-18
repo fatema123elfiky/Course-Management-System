@@ -42,6 +42,7 @@
             this.SIDErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CrsIDErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.SemesterErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.GoBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GradeErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SIDErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CrsIDErrorProvider)).BeginInit();
@@ -138,12 +139,23 @@
             // 
             this.SemesterErrorProvider.ContainerControl = this;
             // 
+            // GoBack
+            // 
+            this.GoBack.Location = new System.Drawing.Point(523, 336);
+            this.GoBack.Name = "GoBack";
+            this.GoBack.Size = new System.Drawing.Size(75, 23);
+            this.GoBack.TabIndex = 9;
+            this.GoBack.Text = "GoBack";
+            this.GoBack.UseVisualStyleBackColor = true;
+            this.GoBack.Click += new System.EventHandler(this.GoBack_Click);
+            // 
             // AddGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.GoBack);
             this.Controls.Add(this.GradeLabel);
             this.Controls.Add(this.Grade);
             this.Controls.Add(this.Semester);
@@ -180,5 +192,6 @@
         private System.Windows.Forms.ErrorProvider SIDErrorProvider;
         private System.Windows.Forms.ErrorProvider CrsIDErrorProvider;
         private System.Windows.Forms.ErrorProvider SemesterErrorProvider;
+        private System.Windows.Forms.Button GoBack;
     }
 }

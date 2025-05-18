@@ -9,8 +9,10 @@ namespace Course_Managment.Instructor.Upd_del
     {
         private readonly string connectionString = @"Data Source=localhost;Initial Catalog=CrsManagement;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
-        public UpdCrs()
+        instructorFrom previous;
+        public UpdCrs(instructorFrom previous)
         {
+            
             InitializeComponent();
 
             btnUpdateExamName.Click += btnUpdateExamName_Click;
@@ -18,7 +20,7 @@ namespace Course_Managment.Instructor.Upd_del
             btnUpdateCategory.Click += btnUpdateCategory_Click;
             button1.Click += button1_Click;
             //button2.Click += button2_Click;
-
+            this.previous = previous;
         }
 
         private void UpdCrs_Load(object sender, EventArgs e)
@@ -186,6 +188,12 @@ namespace Course_Managment.Instructor.Upd_del
         private void button2_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            previous.Show();
+            this.Close();
         }
     }
 }

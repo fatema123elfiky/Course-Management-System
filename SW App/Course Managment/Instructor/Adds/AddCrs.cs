@@ -13,10 +13,12 @@ namespace Course_Managment.Instructor.Adds
 {
     public partial class AddCrs : Form
     {
-        
-        public AddCrs()
+
+        instructorFrom form;
+        public AddCrs(instructorFrom form)
         {
             InitializeComponent();
+            this.form = form;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -140,7 +142,8 @@ namespace Course_Managment.Instructor.Adds
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            form.Show();
+            this.Close();
         }
     }
 }

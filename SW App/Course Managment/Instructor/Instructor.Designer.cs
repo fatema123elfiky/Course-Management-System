@@ -38,6 +38,7 @@
             this.UpdCrs = new System.Windows.Forms.Button();
             this.UpdInstruc = new System.Windows.Forms.Button();
             this.addGrade = new System.Windows.Forms.Button();
+            this.LogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addInstBtn
@@ -149,12 +150,25 @@
             this.addGrade.UseVisualStyleBackColor = true;
             this.addGrade.Click += new System.EventHandler(this.addGrade_Click);
             // 
+            // LogOut
+            // 
+            this.LogOut.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOut.ForeColor = System.Drawing.Color.Red;
+            this.LogOut.Location = new System.Drawing.Point(789, 12);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(124, 40);
+            this.LogOut.TabIndex = 12;
+            this.LogOut.Text = "Log Out";
+            this.LogOut.UseVisualStyleBackColor = true;
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
+            // 
             // instructorFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(925, 604);
+            this.Controls.Add(this.LogOut);
             this.Controls.Add(this.addGrade);
             this.Controls.Add(this.UpdInstruc);
             this.Controls.Add(this.UpdCrs);
@@ -184,5 +198,6 @@
         private System.Windows.Forms.Button UpdCrs;
         private System.Windows.Forms.Button UpdInstruc;
         private System.Windows.Forms.Button addGrade;
+        private System.Windows.Forms.Button LogOut;
     }
 }

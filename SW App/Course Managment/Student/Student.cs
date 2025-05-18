@@ -56,5 +56,13 @@ namespace Course_Managment.Student
         {
 
         }
+
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            Login previous = new Login();
+            previous.Show();
+            this.Close();
+
+        }
     }
 }

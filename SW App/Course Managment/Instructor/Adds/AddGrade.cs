@@ -14,9 +14,11 @@ namespace Course_Managment.Instructor.Adds
 {
     public partial class AddGrade : Form
     {
-        public AddGrade()
+        instructorFrom previous;
+        public AddGrade(instructorFrom previous)
         {
             InitializeComponent();
+            this.previous = previous;
         }
 
         private void AddGrade_Load(object sender, EventArgs e)
@@ -106,6 +108,12 @@ namespace Course_Managment.Instructor.Adds
                 return;
             }
             connection.Close();
+        }
+
+        private void GoBack_Click(object sender, EventArgs e)
+        {
+            previous.Show();
+            this.Close();
         }
     }
 
