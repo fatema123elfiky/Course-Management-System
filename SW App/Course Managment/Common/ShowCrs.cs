@@ -14,8 +14,8 @@ namespace Course_Managment.Common
 {
     public partial class ShowCrs : Form
     {
-        instructorFrom form;
-        public ShowCrs(instructorFrom form)
+        Form form;
+        public ShowCrs(Form form)
         {
             InitializeComponent();
             this.form = form;
@@ -48,8 +48,6 @@ namespace Course_Managment.Common
             adapter.Fill(table);
             dataGridView1.DataSource = table;
             connection.Close();
-
-
         }
 
         private void FilterCat_Click(object sender, EventArgs e)

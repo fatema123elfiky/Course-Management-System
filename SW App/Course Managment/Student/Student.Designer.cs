@@ -101,6 +101,7 @@
             this.Controls.Add(this.ADDENROLL);
             this.Name = "Student";
             this.Text = "Stud";
+            this.Load += new System.EventHandler(this.Student_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
