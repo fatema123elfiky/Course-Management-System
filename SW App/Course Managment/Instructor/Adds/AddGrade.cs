@@ -74,14 +74,7 @@ namespace Course_Managment.Instructor.Adds
                 return;
             }
 
-            // Validate Semester
-            validation.CommandText = "SELECT COUNT(*) FROM ENROLL_IN WHERE SEMESTER = @Semester;";
-            int semester = (int)validation.ExecuteScalar();
-            if (semester == 0)
-            {
-                SemesterErrorProvider.SetError(this.Semester, "Semester does not exist");
-                return;
-            }
+            
 
             // Validate Enrollment
             validation.CommandText = "SELECT COUNT(*) FROM ENROLL_IN WHERE SID = @SID AND CID = @CrsID AND SEMESTER = @Semester;";

@@ -83,8 +83,7 @@ namespace Course_Managment.Instructor
                     if (rows > 0)
                     {
                         MessageBox.Show("Successfully Added New Instructor");
-                        this.Close();
-                        return;
+
                     }
                     else
                     {
