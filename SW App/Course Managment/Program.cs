@@ -17,7 +17,7 @@ namespace Course_Managment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (var login = new AddEnroll())
+            using (var login = new Login())
             {
                 Application.Run(login);
             }
