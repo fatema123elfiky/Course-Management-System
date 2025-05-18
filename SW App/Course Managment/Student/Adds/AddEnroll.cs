@@ -14,10 +14,12 @@ namespace Course_Managment.Student.Adds
     public partial class AddEnroll : Form
     {
         Student previous;
-        public AddEnroll(Student form)
+        int id;
+        public AddEnroll(Student form,int id)
         {
             InitializeComponent();
             previous = form;
+            this.id = id;
         }
 
         private void AddEnroll_Load(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace Course_Managment.Student.Adds
 
         private void View_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM ENROLL_IN WHERE SID = '" + StudIDText.Text
+            string query = "SELECT * FROM ENROLL_IN WHERE SID = '" + id
                  + "'";
             SqlDataAdapter adapter = new SqlDataAdapter(query, "Data Source=(local);Initial Catalog=CrsManagement;Integrated Security=True");
             DataTable table = new DataTable();
@@ -54,7 +56,6 @@ namespace Course_Managment.Student.Adds
             
             
             if (string.IsNullOrEmpty(CrsIDText.Text.Trim())||
-                string.IsNullOrEmpty(StudIDText.Text.Trim())||
                 string.IsNullOrEmpty(SemesterText.Text.Trim())||
                 string.IsNullOrEmpty(YearText.Text.Trim()))
             {
@@ -63,14 +64,7 @@ namespace Course_Managment.Student.Adds
             }
          
 
-            validation.CommandText = "SELECT COUNT(*) FROM STUDENT WHERE SID = '" + StudIDText.Text + "'";
-            int studentExists = (int)validation.ExecuteScalar();
-
-            if (studentExists == 0)
-            {
-                MessageBox.Show("Student ID does not exist.");
-                return;
-            }
+ 
 
             validation.CommandText = "SELECT COUNT(*) FROM COURSE WHERE CID = '" + CrsIDText.Text + "'";
             int courseExists = (int)validation.ExecuteScalar();
@@ -80,10 +74,19 @@ namespace Course_Managment.Student.Adds
                 MessageBox.Show("Course ID does not exist.");
                 return;
             }
-            ////
-            
 
-            cmd.CommandText = "Insert into ENROLL_IN (SID,CRSID,SEMESTER ,YEAR ,SEMESTER) values ('" + StudIDText.Text + "','" + CrsIDText.Text + "','"
+            validation.CommandText = "SELECT COUNT(*) FROM ENROLL_IN WHERE CID = '" + CrsIDText.Text + "' AND SID = '"+id+"'";
+            int registerd = (int)validation.ExecuteScalar();
+
+            if (registerd != 0)
+            {
+                MessageBox.Show("That Registeration exists.");
+                return;
+            }
+            ////
+
+
+            cmd.CommandText = "Insert into ENROLL_IN (SID,CRSID,SEMESTER ,YEAR ,SEMESTER) values ('" + id + "','" + CrsIDText.Text + "','"
                               + SemesterText.Text + "','" + YearText.Text + "')";
             cmd.ExecuteNonQuery();
             connection.Close();

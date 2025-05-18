@@ -31,26 +31,24 @@
             this.components = new System.ComponentModel.Container();
             this.View = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
-            this.StudentID = new System.Windows.Forms.Label();
             this.Year = new System.Windows.Forms.Label();
             this.Semester = new System.Windows.Forms.Label();
             this.CrsID = new System.Windows.Forms.Label();
             this.YearText = new System.Windows.Forms.TextBox();
             this.CrsIDText = new System.Windows.Forms.TextBox();
-            this.StudIDText = new System.Windows.Forms.TextBox();
             this.SemesterText = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.crsManagementDataSet = new Course_Managment.CrsManagementDataSet();
-            this.eNROLLINBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eNROLL_INTableAdapter = new Course_Managment.CrsManagementDataSetTableAdapters.ENROLL_INTableAdapter();
             this.cIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sEMESTERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yEARDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eNROLLINBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.crsManagementDataSet = new Course_Managment.CrsManagementDataSet();
+            this.eNROLL_INTableAdapter = new Course_Managment.CrsManagementDataSetTableAdapters.ENROLL_INTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.Welcome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.crsManagementDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eNROLLINBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crsManagementDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // View
@@ -73,19 +71,10 @@
             this.Add.UseVisualStyleBackColor = true;
             this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
-            // StudentID
-            // 
-            this.StudentID.AutoSize = true;
-            this.StudentID.Location = new System.Drawing.Point(67, 88);
-            this.StudentID.Name = "StudentID";
-            this.StudentID.Size = new System.Drawing.Size(65, 16);
-            this.StudentID.TabIndex = 2;
-            this.StudentID.Text = "StudentID";
-            // 
             // Year
             // 
             this.Year.AutoSize = true;
-            this.Year.Location = new System.Drawing.Point(67, 132);
+            this.Year.Location = new System.Drawing.Point(71, 150);
             this.Year.Name = "Year";
             this.Year.Size = new System.Drawing.Size(36, 16);
             this.Year.TabIndex = 3;
@@ -94,7 +83,7 @@
             // Semester
             // 
             this.Semester.AutoSize = true;
-            this.Semester.Location = new System.Drawing.Point(67, 170);
+            this.Semester.Location = new System.Drawing.Point(67, 191);
             this.Semester.Name = "Semester";
             this.Semester.Size = new System.Drawing.Size(65, 16);
             this.Semester.TabIndex = 4;
@@ -103,7 +92,7 @@
             // CrsID
             // 
             this.CrsID.AutoSize = true;
-            this.CrsID.Location = new System.Drawing.Point(71, 215);
+            this.CrsID.Location = new System.Drawing.Point(67, 109);
             this.CrsID.Name = "CrsID";
             this.CrsID.Size = new System.Drawing.Size(40, 16);
             this.CrsID.TabIndex = 5;
@@ -111,28 +100,21 @@
             // 
             // YearText
             // 
-            this.YearText.Location = new System.Drawing.Point(138, 126);
+            this.YearText.Location = new System.Drawing.Point(138, 150);
             this.YearText.Name = "YearText";
             this.YearText.Size = new System.Drawing.Size(173, 22);
             this.YearText.TabIndex = 6;
             // 
             // CrsIDText
             // 
-            this.CrsIDText.Location = new System.Drawing.Point(138, 209);
+            this.CrsIDText.Location = new System.Drawing.Point(138, 109);
             this.CrsIDText.Name = "CrsIDText";
             this.CrsIDText.Size = new System.Drawing.Size(173, 22);
             this.CrsIDText.TabIndex = 7;
             // 
-            // StudIDText
-            // 
-            this.StudIDText.Location = new System.Drawing.Point(138, 82);
-            this.StudIDText.Name = "StudIDText";
-            this.StudIDText.Size = new System.Drawing.Size(173, 22);
-            this.StudIDText.TabIndex = 8;
-            // 
             // SemesterText
             // 
-            this.SemesterText.Location = new System.Drawing.Point(138, 167);
+            this.SemesterText.Location = new System.Drawing.Point(138, 191);
             this.SemesterText.Name = "SemesterText";
             this.SemesterText.Size = new System.Drawing.Size(173, 22);
             this.SemesterText.TabIndex = 9;
@@ -153,20 +135,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(395, 150);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // crsManagementDataSet
-            // 
-            this.crsManagementDataSet.DataSetName = "CrsManagementDataSet";
-            this.crsManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // eNROLLINBindingSource
-            // 
-            this.eNROLLINBindingSource.DataMember = "ENROLL_IN";
-            this.eNROLLINBindingSource.DataSource = this.crsManagementDataSet;
-            // 
-            // eNROLL_INTableAdapter
-            // 
-            this.eNROLL_INTableAdapter.ClearBeforeFill = true;
             // 
             // cIDDataGridViewTextBoxColumn
             // 
@@ -191,6 +159,20 @@
             this.yEARDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.yEARDataGridViewTextBoxColumn.Name = "yEARDataGridViewTextBoxColumn";
             this.yEARDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // eNROLLINBindingSource
+            // 
+            this.eNROLLINBindingSource.DataMember = "ENROLL_IN";
+            this.eNROLLINBindingSource.DataSource = this.crsManagementDataSet;
+            // 
+            // crsManagementDataSet
+            // 
+            this.crsManagementDataSet.DataSetName = "CrsManagementDataSet";
+            this.crsManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // eNROLL_INTableAdapter
+            // 
+            this.eNROLL_INTableAdapter.ClearBeforeFill = true;
             // 
             // button1
             // 
@@ -222,21 +204,19 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.SemesterText);
-            this.Controls.Add(this.StudIDText);
             this.Controls.Add(this.CrsIDText);
             this.Controls.Add(this.YearText);
             this.Controls.Add(this.CrsID);
             this.Controls.Add(this.Semester);
             this.Controls.Add(this.Year);
-            this.Controls.Add(this.StudentID);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.View);
             this.Name = "AddEnroll";
             this.Text = "AddEnroll";
             this.Load += new System.EventHandler(this.AddEnroll_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.crsManagementDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eNROLLINBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crsManagementDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,13 +226,11 @@
 
         private System.Windows.Forms.Button View;
         private System.Windows.Forms.Button Add;
-        private System.Windows.Forms.Label StudentID;
         private System.Windows.Forms.Label Year;
         private System.Windows.Forms.Label Semester;
         private System.Windows.Forms.Label CrsID;
         private System.Windows.Forms.TextBox YearText;
         private System.Windows.Forms.TextBox CrsIDText;
-        private System.Windows.Forms.TextBox StudIDText;
         private System.Windows.Forms.TextBox SemesterText;
         private System.Windows.Forms.DataGridView dataGridView1;
         private CrsManagementDataSet crsManagementDataSet;

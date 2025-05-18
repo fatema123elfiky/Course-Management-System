@@ -28,107 +28,204 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ShowCourses = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.ChooseCategory = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowCourses)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ViewAll = new System.Windows.Forms.Button();
+            this.GoBack = new System.Windows.Forms.Button();
+            this.HighRegisteration = new System.Windows.Forms.Button();
+            this.Welcome = new System.Windows.Forms.Label();
+            this.crsManagementDataSet = new Course_Managment.CrsManagementDataSet();
+            this.cOURSEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cOURSETableAdapter = new Course_Managment.CrsManagementDataSetTableAdapters.COURSETableAdapter();
+            this.cIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eXAMNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cRSNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cATEGORYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iSHIDDENDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.eXAMCIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.Label();
+            this.FilterCat = new System.Windows.Forms.Button();
+            this.cOURSEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.CatValue = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crsManagementDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOURSEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOURSEBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // ShowCourses
+            // dataGridView1
             // 
-            this.ShowCourses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ShowCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ShowCourses.Location = new System.Drawing.Point(12, 126);
-            this.ShowCourses.Name = "ShowCourses";
-            this.ShowCourses.RowHeadersWidth = 51;
-            this.ShowCourses.RowTemplate.Height = 24;
-            this.ShowCourses.Size = new System.Drawing.Size(603, 245);
-            this.ShowCourses.TabIndex = 0;
-            this.ShowCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShowCourses_CellContentClick);
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cIDDataGridViewTextBoxColumn,
+            this.eXAMNAMEDataGridViewTextBoxColumn,
+            this.cRSNAMEDataGridViewTextBoxColumn,
+            this.cATEGORYDataGridViewTextBoxColumn,
+            this.iSHIDDENDataGridViewCheckBoxColumn,
+            this.eXAMCIDDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.cOURSEBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(2, 78);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(795, 170);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // ViewAll
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 41);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Return";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ViewAll.Location = new System.Drawing.Point(188, 390);
+            this.ViewAll.Name = "ViewAll";
+            this.ViewAll.Size = new System.Drawing.Size(93, 27);
+            this.ViewAll.TabIndex = 1;
+            this.ViewAll.Text = "ViewAll";
+            this.ViewAll.UseVisualStyleBackColor = true;
+            this.ViewAll.Click += new System.EventHandler(this.ViewAll_Click);
             // 
-            // ChooseCategory
+            // GoBack
             // 
-            this.ChooseCategory.BackColor = System.Drawing.Color.Silver;
-            this.ChooseCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ChooseCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ChooseCategory.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.ChooseCategory.Location = new System.Drawing.Point(202, 57);
-            this.ChooseCategory.Name = "ChooseCategory";
-            this.ChooseCategory.Size = new System.Drawing.Size(120, 41);
-            this.ChooseCategory.TabIndex = 2;
-            this.ChooseCategory.Text = "Filter";
-            this.ChooseCategory.UseVisualStyleBackColor = false;
-            this.ChooseCategory.Click += new System.EventHandler(this.button2_Click);
+            this.GoBack.Location = new System.Drawing.Point(52, 391);
+            this.GoBack.Name = "GoBack";
+            this.GoBack.Size = new System.Drawing.Size(93, 26);
+            this.GoBack.TabIndex = 2;
+            this.GoBack.Text = "GoBack";
+            this.GoBack.UseVisualStyleBackColor = true;
+            this.GoBack.Click += new System.EventHandler(this.GoBack_Click);
             // 
-            // button3
+            // HighRegisteration
             // 
-            this.button3.BackColor = System.Drawing.Color.Silver;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button3.Location = new System.Drawing.Point(12, 57);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(160, 41);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Show All";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.HighRegisteration.Location = new System.Drawing.Point(387, 320);
+            this.HighRegisteration.Name = "HighRegisteration";
+            this.HighRegisteration.Size = new System.Drawing.Size(140, 26);
+            this.HighRegisteration.TabIndex = 3;
+            this.HighRegisteration.Text = "HighRegisteration";
+            this.HighRegisteration.UseVisualStyleBackColor = true;
+            this.HighRegisteration.Click += new System.EventHandler(this.HighRegisteration_Click);
             // 
-            // label1
+            // Welcome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(344, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Choose Category of courses";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.Welcome.AutoSize = true;
+            this.Welcome.Font = new System.Drawing.Font("Microsoft Uighur", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Welcome.Location = new System.Drawing.Point(330, 21);
+            this.Welcome.Name = "Welcome";
+            this.Welcome.Size = new System.Drawing.Size(169, 34);
+            this.Welcome.TabIndex = 4;
+            this.Welcome.Text = "SHOW COURSES";
             // 
-            // comboBox1
+            // crsManagementDataSet
             // 
-            this.comboBox1.DropDownHeight = 150;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.IntegralHeight = false;
-            this.comboBox1.Location = new System.Drawing.Point(347, 67);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 24);
-            this.comboBox1.Sorted = true;
-            this.comboBox1.TabIndex = 14;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            this.crsManagementDataSet.DataSetName = "CrsManagementDataSet";
+            this.crsManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cOURSEBindingSource
+            // 
+            this.cOURSEBindingSource.DataMember = "COURSE";
+            this.cOURSEBindingSource.DataSource = this.crsManagementDataSet;
+            // 
+            // cOURSETableAdapter
+            // 
+            this.cOURSETableAdapter.ClearBeforeFill = true;
+            // 
+            // cIDDataGridViewTextBoxColumn
+            // 
+            this.cIDDataGridViewTextBoxColumn.DataPropertyName = "CID";
+            this.cIDDataGridViewTextBoxColumn.HeaderText = "CID";
+            this.cIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cIDDataGridViewTextBoxColumn.Name = "cIDDataGridViewTextBoxColumn";
+            this.cIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // eXAMNAMEDataGridViewTextBoxColumn
+            // 
+            this.eXAMNAMEDataGridViewTextBoxColumn.DataPropertyName = "EXAMNAME";
+            this.eXAMNAMEDataGridViewTextBoxColumn.HeaderText = "EXAMNAME";
+            this.eXAMNAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.eXAMNAMEDataGridViewTextBoxColumn.Name = "eXAMNAMEDataGridViewTextBoxColumn";
+            this.eXAMNAMEDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cRSNAMEDataGridViewTextBoxColumn
+            // 
+            this.cRSNAMEDataGridViewTextBoxColumn.DataPropertyName = "CRSNAME";
+            this.cRSNAMEDataGridViewTextBoxColumn.HeaderText = "CRSNAME";
+            this.cRSNAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cRSNAMEDataGridViewTextBoxColumn.Name = "cRSNAMEDataGridViewTextBoxColumn";
+            this.cRSNAMEDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cATEGORYDataGridViewTextBoxColumn
+            // 
+            this.cATEGORYDataGridViewTextBoxColumn.DataPropertyName = "CATEGORY";
+            this.cATEGORYDataGridViewTextBoxColumn.HeaderText = "CATEGORY";
+            this.cATEGORYDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cATEGORYDataGridViewTextBoxColumn.Name = "cATEGORYDataGridViewTextBoxColumn";
+            this.cATEGORYDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // iSHIDDENDataGridViewCheckBoxColumn
+            // 
+            this.iSHIDDENDataGridViewCheckBoxColumn.DataPropertyName = "ISHIDDEN";
+            this.iSHIDDENDataGridViewCheckBoxColumn.HeaderText = "ISHIDDEN";
+            this.iSHIDDENDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.iSHIDDENDataGridViewCheckBoxColumn.Name = "iSHIDDENDataGridViewCheckBoxColumn";
+            this.iSHIDDENDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // eXAMCIDDataGridViewTextBoxColumn
+            // 
+            this.eXAMCIDDataGridViewTextBoxColumn.DataPropertyName = "EXAMCID";
+            this.eXAMCIDDataGridViewTextBoxColumn.HeaderText = "EXAMCID";
+            this.eXAMCIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.eXAMCIDDataGridViewTextBoxColumn.Name = "eXAMCIDDataGridViewTextBoxColumn";
+            this.eXAMCIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Category
+            // 
+            this.Category.AutoSize = true;
+            this.Category.Location = new System.Drawing.Point(578, 290);
+            this.Category.Name = "Category";
+            this.Category.Size = new System.Drawing.Size(62, 16);
+            this.Category.TabIndex = 6;
+            this.Category.Text = "Category";
+            // 
+            // FilterCat
+            // 
+            this.FilterCat.Location = new System.Drawing.Point(581, 320);
+            this.FilterCat.Name = "FilterCat";
+            this.FilterCat.Size = new System.Drawing.Size(138, 26);
+            this.FilterCat.TabIndex = 7;
+            this.FilterCat.Text = "Category Filter";
+            this.FilterCat.UseVisualStyleBackColor = true;
+            this.FilterCat.Click += new System.EventHandler(this.FilterCat_Click);
+            // 
+            // cOURSEBindingSource1
+            // 
+            this.cOURSEBindingSource1.DataMember = "COURSE";
+            this.cOURSEBindingSource1.DataSource = this.crsManagementDataSet;
+            // 
+            // CatValue
+            // 
+            this.CatValue.Location = new System.Drawing.Point(646, 284);
+            this.CatValue.Name = "CatValue";
+            this.CatValue.Size = new System.Drawing.Size(142, 22);
+            this.CatValue.TabIndex = 8;
             // 
             // ShowCrs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 383);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.ChooseCategory);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.ShowCourses);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CatValue);
+            this.Controls.Add(this.FilterCat);
+            this.Controls.Add(this.Category);
+            this.Controls.Add(this.Welcome);
+            this.Controls.Add(this.HighRegisteration);
+            this.Controls.Add(this.GoBack);
+            this.Controls.Add(this.ViewAll);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "ShowCrs";
             this.Text = "ShowCrs";
             this.Load += new System.EventHandler(this.ShowCrs_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ShowCourses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crsManagementDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOURSEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOURSEBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,11 +233,23 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView ShowCourses;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button ChooseCategory;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button ViewAll;
+        private System.Windows.Forms.Button GoBack;
+        private System.Windows.Forms.Button HighRegisteration;
+        private System.Windows.Forms.Label Welcome;
+        private CrsManagementDataSet crsManagementDataSet;
+        private System.Windows.Forms.BindingSource cOURSEBindingSource;
+        private CrsManagementDataSetTableAdapters.COURSETableAdapter cOURSETableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eXAMNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cRSNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cATEGORYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn iSHIDDENDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eXAMCIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label Category;
+        private System.Windows.Forms.Button FilterCat;
+        private System.Windows.Forms.BindingSource cOURSEBindingSource1;
+        private System.Windows.Forms.TextBox CatValue;
     }
 }

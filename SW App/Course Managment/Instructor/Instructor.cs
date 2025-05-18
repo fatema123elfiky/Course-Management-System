@@ -41,15 +41,8 @@ namespace Course_Managment.Instructor
 
         }
 
-        private void Showinstructs_Click(object sender, EventArgs e)
-        {
+  
 
-        }
-
-        private void showenrolls_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void addCrs_Click(object sender, EventArgs e)
         {

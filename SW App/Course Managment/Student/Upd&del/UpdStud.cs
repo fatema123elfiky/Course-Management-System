@@ -14,10 +14,12 @@ namespace Course_Managment.Student.Upd_del
     public partial class UpdStud : Form
     {
         Student previous;
-        public UpdStud(Student Form)
+        int id;
+        public UpdStud(Student Form, int id)
         {
             InitializeComponent();
             previous = Form;
+            this.id = id;
         }
 
         private void Update_Click(object sender, EventArgs e){
@@ -32,7 +34,6 @@ namespace Course_Managment.Student.Upd_del
 
             //validation part//
             if (string.IsNullOrEmpty(NameText.Text.Trim())||
-                string.IsNullOrEmpty(StudIDText.Text.Trim())||
                 string.IsNullOrEmpty(EmailText.Text.Trim())||
                 string.IsNullOrEmpty(PasswordText.Text.Trim())){
                 
@@ -40,20 +41,13 @@ namespace Course_Managment.Student.Upd_del
                 return;
             }
 
-            validation.CommandText = "SELECT COUNT(*) FROM STUDENT WHERE SID = '" + StudIDText.Text + "'";
-            int studentExists = (int)validation.ExecuteScalar();
-
-            if (studentExists == 0)
-            {
-                MessageBox.Show("Student ID does not exist.");
-                return;
-            }
+          
             // //
 
             cmd.CommandText="Update STUDENT SET SNAME = '"+
                 NameText.Text + "', SEMAIL = '"+EmailText.Text+
                 "', SPASSWORD = '"+PasswordText.Text+"' WHERE SID = '"
-                + StudIDText.Text+"';";
+                + id+"';";
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Your info is updated !!");
@@ -64,6 +58,21 @@ namespace Course_Managment.Student.Upd_del
         private void GoBack_Click(object sender, EventArgs e){
             previous.Show();
             this.Close();
+        }
+
+        private void UpdStud_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void View_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM STUDENT WHERE SID = '" + id
+                 + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, "Data Source=(local);Initial Catalog=CrsManagement;Integrated Security=True");
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
         }
     }
 }

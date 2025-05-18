@@ -1,95 +1,82 @@
-﻿using System;
+﻿using Course_Managment.Instructor;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Course_Managment.Common
 {
     public partial class ShowCrs : Form
     {
-        public ShowCrs()
+        instructorFrom form;
+        public ShowCrs(instructorFrom form)
         {
             InitializeComponent();
+            this.form = form;
         }
 
         private void ShowCrs_Load(object sender, EventArgs e)
         {
+           
+        }
+
+        private void ViewAll_Click(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'crsManagementDataSet.COURSE' table. You can move, or remove it, as needed.
+            this.cOURSETableAdapter.Fill(this.crsManagementDataSet.COURSE);
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void GoBack_Click(object sender, EventArgs e)
         {
-            string selectedCategory = comboBox1.SelectedItem?.ToString();
+            form.Show();
+            this.Close();
+        }
 
-            if (!string.IsNullOrEmpty(selectedCategory))
-            {
-                using (SqlConnection conn = new SqlConnection("Data Source=ALY-EL-BADRY\\SQLEXPRESS;Initial Catalog=courseManagementSystem;Integrated Security=True;Encrypt=True;Trust Server Certificate=True"))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM COURSE WHERE CATEGORY = @category", conn);
-                    cmd.Parameters.AddWithValue("@category", selectedCategory);
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
+        private void HighRegisteration_Click(object sender, EventArgs e)
+        {
 
-                    ShowCourses.DataSource = dt;
-                    conn.Close();
-                }
+        }
+
+        private void FilterCat_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection("Data Source=(local);Initial Catalog=CrsManagement;Integrated Security=True");
+            SqlCommand cmd = new SqlCommand();
+            SqlCommand validation = new SqlCommand();
+            validation.Connection = connection;
+            cmd.Connection = connection;
+            connection.Open();
+
+            //validation//
+
+            if (string.IsNullOrEmpty(CatValue.Text.Trim())){
+                MessageBox.Show("The category field is empty !!");
+                return;
             }
-        }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+            validation.CommandText = "SELECT COUNT(*) FROM COURSE WHERE CATEGORY = '" + CatValue.Text + "'";
+            int categories = (int)validation.ExecuteScalar();
 
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            using (SqlConnection conn = new SqlConnection("Data Source=ALY-EL-BADRY\\SQLEXPRESS;Initial Catalog=courseManagementSystem;Integrated Security=True;Encrypt=True;Trust Server Certificate=True"))
+            if (categories == 0)
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM COURSE WHERE ISHIDDEN = 0", conn);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                ShowCourses.DataSource = dt;
-                conn.Close();
+                MessageBox.Show("Category does not exist.");
+                return;
             }
-        }
 
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            using (SqlConnection conn = new SqlConnection("Data Source=ALY-EL-BADRY\\SQLEXPRESS;Initial Catalog=courseManagementSystem;Integrated Security=True;Encrypt=True;Trust Server Certificate=True"))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT DISTINCT CATEGORY FROM COURSE", conn);
-                SqlDataReader reader = cmd.ExecuteReader();
+            //
+            string query = "SELECT * FROM COURSE WHERE CATEGORY = '" + CatValue.Text
+                + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, "Data Source=(local);Initial Catalog=CrsManagement;Integrated Security=True");
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
 
-                while (reader.Read())
-                {
-                    comboBox1.Items.Add(reader["CATEGORY"].ToString());
-                }
-
-                conn.Close();
-            }
-        }
-
-        private void ShowCourses_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            using (SqlConnection conn = new SqlConnection("Data Source=ALY-EL-BADRY\\SQLEXPRESS;Initial Catalog=courseManagementSystem;Integrated Security=True;Encrypt=True;Trust Server Certificate=True"))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM COURSE WHERE ISHIDDEN = 0", conn);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                ShowCourses.DataSource = dt;
-                conn.Close();
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
         }
     }
 }

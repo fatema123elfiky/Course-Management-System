@@ -29,10 +29,7 @@ namespace Course_Managment.Student
 
         }
 
-        private void Shwmyenroll_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void shwcrs_Click(object sender, EventArgs e)
         {
