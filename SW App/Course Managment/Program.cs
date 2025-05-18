@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Course_Managment.Student.Adds;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Course_Managment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (var login = new Login())
+            using (var login = new AddEnroll())
             {
                 Application.Run(login);
             }
