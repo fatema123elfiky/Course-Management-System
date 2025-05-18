@@ -41,6 +41,14 @@ namespace Course_Managment.Common
 
         private void HighRegisteration_Click(object sender, EventArgs e)
         {
+            SqlConnection connection = new SqlConnection("Data Source=(local);Initial Catalog=CrsManagement;Integrated Security=True");
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT CID, SEMESTER, COUNT(SID) AS Number_Of_Students FROM ENROLL_IN GROUP BY CID, SEMESTER ORDER BY Number_Of_Students DESC", connection);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
+            connection.Close();
+
 
         }
 
