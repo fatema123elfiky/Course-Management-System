@@ -100,6 +100,8 @@ namespace Course_Managment.Instructor.Adds
                 return;
             }
             connection.Close();
+            MessageBox.Show("Grade is added !!");
+            
         }
 
         private void GoBack_Click(object sender, EventArgs e)
