@@ -17,6 +17,18 @@ The project was developed as part of the Database Systems coursework at Cairo Un
 
 ## 🗂 Project Structure
 
+```angular2html
+├── Physical Design / # Contains the DDL file where you can build your project
+├── SW APP/ # Contains The .sln and the folders of the project
+     └── Course Management.sln
+     └── Course Management/
+          └── Common/# showing and reporting panels
+          └── Instructor/ # all panels related to instructor
+          └── Student/# all panels related to student
+          └── Login.cs # the start point of the program
+          └── CrsManagementDataSet.xss 
+├── Database.pdf # Contains the functional requirements
+```
 
 ---
 
